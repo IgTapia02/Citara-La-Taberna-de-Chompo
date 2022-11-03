@@ -30,6 +30,10 @@ public class NPCBase : MonoBehaviour
         {
             Move();
         }
+        if(state == 4)
+        {
+            Move();
+        }
     }
 
     void Move()
@@ -45,6 +49,10 @@ public class NPCBase : MonoBehaviour
             if(state == 0)
             {
                 target = other.gameObject.GetComponent<WayPoints>().point;
+            }
+            if(state == 4)
+            {
+                target = other.gameObject.GetComponent<WayPoints>().Exitpoint;
             }
         }
 
@@ -71,6 +79,7 @@ public class NPCBase : MonoBehaviour
                 else
                 {
                     state =  4;
+                    target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
                 }
             }
         }

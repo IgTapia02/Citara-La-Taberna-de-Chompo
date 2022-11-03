@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class ChairManager : MonoBehaviour
 {
-    public Transform chair1, chair2, chair3, chair4;
+    public Transform chair1, chair2, chair3, chair4, Exitpoint;
 }

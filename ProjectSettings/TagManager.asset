@@ -9,6 +9,7 @@ TagManager:
   - Chair
   - Chairmanager
   - NPC
+  - Npc
   layers:
   - Default
   - TransparentFX
