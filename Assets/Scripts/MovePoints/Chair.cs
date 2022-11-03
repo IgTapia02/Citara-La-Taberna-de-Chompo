@@ -18,13 +18,6 @@ public class Chair : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Npc"))
-        {
-            fill = true;
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Npc"))

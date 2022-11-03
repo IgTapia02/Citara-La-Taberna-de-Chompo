@@ -62,18 +62,22 @@ public class NPCBase : MonoBehaviour
             {
                 if(chair1.GetComponent<Chair>().fill == false)
                 {
+                    chair1.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair1;
                 }
                 else if (chair2.GetComponent<Chair>().fill == false)
                 {
+                    chair2.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair2;
                 }
                 else if (chair3.GetComponent<Chair>().fill == false)
                 {
+                    chair3.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair3;
                 }
                 else if (chair4.GetComponent<Chair>().fill == false)
                 {
+                    chair4.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair4;
                 }
                 else
