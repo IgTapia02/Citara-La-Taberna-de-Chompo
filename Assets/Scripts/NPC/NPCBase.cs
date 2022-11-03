@@ -22,7 +22,6 @@ public class NPCBase : MonoBehaviour
         chair2 = GameObject.Find("Chair (2)");
         chair3 = GameObject.Find("Chair (3)");
         chair4 = GameObject.Find("Chair (4)");
-        target = transform.Find("Waypoint");
     }
 
     void Update()
