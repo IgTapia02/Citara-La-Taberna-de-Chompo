@@ -30,6 +30,10 @@ public class NPCBase : MonoBehaviour
         {
             Move();
         }
+        if(state == 1)
+        {
+            Sentado();
+        }
         if(state == 4)
         {
             Move();
@@ -40,6 +44,11 @@ public class NPCBase : MonoBehaviour
     {
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
+    }
+
+    void Sentado()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other)
