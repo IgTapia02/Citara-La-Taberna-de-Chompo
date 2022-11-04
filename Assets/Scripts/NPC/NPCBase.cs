@@ -11,12 +11,24 @@ public class NPCBase : MonoBehaviour
     int speed;
 
     [SerializeField]
+    GameObject colider;
+
+    [SerializeField]
     public GameObject chair1, chair2, chair3, chair4;
 
-    int state; // 0- entrando, 1- sentado esperando, 3- esperando pedido, 4- saliendo
+    [SerializeField]
+    float whaitimeantespedir;
 
+    [SerializeField]
+    float whaitimedespuespedir;
+
+    public int pedido;
+    int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
+    float tiempo;
+    Player player;
     void Start()
     {
+        tiempo = 0f;
         state = 0;
         chair1 = GameObject.Find("Chair (1)");
         chair2 = GameObject.Find("Chair (2)");
@@ -28,14 +40,58 @@ public class NPCBase : MonoBehaviour
     {
         if (state == 0)
         {
+            Debug.Log("entrando");
             Move();
         }
         if(state == 1)
         {
+            Debug.Log("esperandocomanda");
             Sentado();
+        }
+        if (state == 1)
+        {
+            tiempo += Time.deltaTime;
+            Debug.Log(tiempo);
+            if(tiempo > whaitimeantespedir)
+            {
+                tiempo = 0;
+                state = 5;
+            }
+        }
+        if(state == 2)
+        {
+            Debug.Log("pidiendo");
+            Pedir();
+        }
+        if(state == 3)
+        {
+            Debug.Log("esperandopedido");
+            Sentado2();
+        }
+        if (state == 3)
+        {
+            tiempo += Time.deltaTime;
+            Debug.Log(tiempo);
+            if (tiempo > whaitimedespuespedir)
+            {
+                tiempo = 0;
+                state = 5;
+            }
         }
         if(state == 4)
         {
+            Debug.Log("comiendo");
+            tiempo += Time.deltaTime;
+            Debug.Log(tiempo);
+            if (tiempo > 6)
+            {
+                tiempo = 0;
+                state = 5;
+            }
+        }
+        if (state == 5)
+        {
+            Debug.Log("marchandose");
             Move();
         }
     }
@@ -45,11 +101,41 @@ public class NPCBase : MonoBehaviour
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
     }
-
     void Sentado()
     {
+        GameObject thisColider = Instantiate(colider, transform);
+        colider.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3f);
+
+        if(thisColider.GetComponent<NPCcolider>().atendido== true)
+        {
+            state = 2;
+            Destroy(thisColider);
+        }
+
 
     }
+    void Sentado2()
+    {
+        tiempo = 0;
+        GameObject thisColider = Instantiate(colider, transform);
+        colider.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 3f);
+
+        if (thisColider.GetComponent<NPCcolider>().atendido == true)
+        {
+            if(GetComponent<Player>().Comandas[0] == pedido || GetComponent<Player>().Comandas[1] == pedido || GetComponent<Player>().Comandas[2] == pedido)
+            {
+                Destroy(thisColider);
+            }
+        }
+    }
+    void Pedir()
+    {
+        tiempo = 0;
+        pedido = 1; //zumo
+        player.Apuntar(pedido);
+        state = 3;
+    }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -59,7 +145,7 @@ public class NPCBase : MonoBehaviour
             {
                 target = other.gameObject.GetComponent<WayPoints>().point;
             }
-            if(state == 4)
+            if(state == 5)
             {
                 target = other.gameObject.GetComponent<WayPoints>().Exitpoint;
             }
@@ -91,7 +177,7 @@ public class NPCBase : MonoBehaviour
                 }
                 else
                 {
-                    state =  4;
+                    state =  5;
                     target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
                 }
             }
