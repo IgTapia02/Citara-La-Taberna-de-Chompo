@@ -8,10 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed;
 
-    [SerializeField]
     public KeyCode coger;
-
-    [SerializeField]
     public KeyCode dejar;
 
 

@@ -10,12 +10,14 @@ public class NPCcolider : MonoBehaviour
     {
         atendido = false;
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            if (Input.GetKey(GetComponent<Player>().coger))
+            Debug.Log("istriger");
+            if (Input.GetKeyDown((other.GetComponent<Player>().coger)))
             {
+                Debug.Log(atendido);
                 atendido = true;
             }
         }
