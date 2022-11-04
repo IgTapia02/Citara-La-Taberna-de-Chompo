@@ -6,20 +6,39 @@ public class NPCcolider : MonoBehaviour
 {
 
     public bool atendido;
+    bool colision;
+    GameObject Player;
     void Start()
     {
+        Player = GameObject.Find("Player");
         atendido = false;
     }
-    private void OnTriggerStay(Collider other)
+    void Update()
     {
-        if (other.CompareTag("Player"))
+        Debug.Log(colision);
+        if (colision == true)
         {
             Debug.Log("istriger");
-            if (Input.GetKeyDown((other.GetComponent<Player>().coger)))
+            if (Input.GetKeyDown((Player.GetComponent<Player>().coger)))
             {
                 Debug.Log(atendido);
                 atendido = true;
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            colision = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            colision = false;
+        }
+    }
+
 }

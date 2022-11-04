@@ -13,9 +13,8 @@ public class Player : MonoBehaviour
 
 
     public int[] Comandas = new int[3];
-    int numcomandas;
+    public int numcomandas;
     public int[] Inventario = new int[3];
-    int numplatos;
     void Start()
     {
         numcomandas = 0;
@@ -34,7 +33,7 @@ public class Player : MonoBehaviour
 
     public void Apuntar(int comanda)
     {
-        if(numcomandas<2)
+        if(numcomandas<=2)
         {
             Comandas[numcomandas] = comanda;
             numcomandas++;
@@ -42,10 +41,6 @@ public class Player : MonoBehaviour
     }
     public void Coger(int plato)
     {
-        if (numplatos < 2)
-        {
-            Comandas[numplatos] = plato;
-            numplatos++;
-        }
+            Inventario[0] = plato;
     }
 }

@@ -28,16 +28,21 @@ public class NPCBase : MonoBehaviour
     int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
     float tiempo;
     Player player;
+    NPCManager manager;
     GameObject thisColider;
     void Start()
     {
+        player = FindObjectOfType<Player>();
+        manager = FindObjectOfType<NPCManager>();
         existcolider = false;
         tiempo = 0f;
         state = 0;
+        speed = 5;
         chair1 = GameObject.Find("Chair (1)");
         chair2 = GameObject.Find("Chair (2)");
         chair3 = GameObject.Find("Chair (3)");
         chair4 = GameObject.Find("Chair (4)");
+        target = manager.GetComponent<NPCManager>().target;
     }
 
     void Update()
@@ -137,10 +142,16 @@ public class NPCBase : MonoBehaviour
 
         if (thisColider.GetComponent<NPCcolider>().atendido == true)
         {
-            if(GetComponent<Player>().Comandas[0] == pedido || GetComponent<Player>().Comandas[1] == pedido || GetComponent<Player>().Comandas[2] == pedido)
+            if(player.Inventario[0] == pedido)
             {
+                player.Inventario[0] = 0;
                 Destroy(thisColider);
                 existcolider = false;
+                state = 4;
+            }
+            else
+            {
+                thisColider.GetComponent<NPCcolider>().atendido = false;
             }
         }
     }
