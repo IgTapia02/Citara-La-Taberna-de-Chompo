@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public int dineroPJ;
-    public Text Dinero;
+    public int dineroPJ = 0;
+    public TMP_Text Dinero;
 
     int dia, mes;
 
@@ -19,5 +19,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Dinero.text = dineroPJ + "$";
+    }
+
+    public void Pagar(int pedido)
+    {
+        if(pedido == 1)
+        {
+            dineroPJ += 10;
+        }
+        if(pedido == 2 || pedido == 3 || pedido == 4)
+        {
+            dineroPJ += 100;
+        }
     }
 }

@@ -28,10 +28,12 @@ public class NPCBase : MonoBehaviour
     int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
     float tiempo;
     Player player;
+    GameManager pagar;
     NPCManager manager;
     GameObject thisColider;
     void Start()
     {
+        pagar = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
         manager = FindObjectOfType<NPCManager>();
         existcolider = false;
@@ -145,6 +147,7 @@ public class NPCBase : MonoBehaviour
             if(player.Inventario[0] == pedido)
             {
                 player.Inventario[0] = 0;
+                pagar.Pagar(pedido);
                 Destroy(thisColider);
                 existcolider = false;
                 state = 4;
