@@ -14,7 +14,7 @@ public class NPCBase : MonoBehaviour
     GameObject colider;
 
     [SerializeField]
-    public GameObject chair1, chair2, chair3, chair4;
+    public GameObject chair1, chair2, chair3, chair4, ownchair;
 
     [SerializeField]
     float whaitimeantespedir;
@@ -121,7 +121,7 @@ public class NPCBase : MonoBehaviour
             
         }
 
-        if(thisColider.GetComponent<NPCcolider>().atendido== true)
+        if(thisColider.GetComponent<NPCcolider>().atendido1== true)
         {
             state = 2;
             Destroy(thisColider);
@@ -140,7 +140,7 @@ public class NPCBase : MonoBehaviour
             existcolider = true;
         }
 
-        if (thisColider.GetComponent<NPCcolider>().atendido == true)
+        if (thisColider.GetComponent<NPCcolider>().atendido2 == true)
         {
             if(player.Inventario[0] == pedido)
             {
@@ -151,14 +151,14 @@ public class NPCBase : MonoBehaviour
             }
             else
             {
-                thisColider.GetComponent<NPCcolider>().atendido = false;
+                thisColider.GetComponent<NPCcolider>().atendido2 = false;
             }
         }
     }
     void Pedir()
     {
         tiempo = 0;
-        pedido = Random.Range(1,6); //zumo
+        pedido = Random.Range(1,5);
         player.Apuntar(pedido);
         state = 3;
     }
@@ -183,6 +183,7 @@ public class NPCBase : MonoBehaviour
             if(state == 5)
             {
                 target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
+                ownchair.GetComponent<Chair>().fill = false;
             }
             if(state == 0)
             {
@@ -190,21 +191,25 @@ public class NPCBase : MonoBehaviour
                 {
                     chair1.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair1;
+                    ownchair = chair1;
                 }
                 else if (chair2.GetComponent<Chair>().fill == false)
                 {
                     chair2.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair2;
+                    ownchair = chair2;
                 }
                 else if (chair3.GetComponent<Chair>().fill == false)
                 {
                     chair3.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair3;
+                    ownchair = chair3;
                 }
                 else if (chair4.GetComponent<Chair>().fill == false)
                 {
                     chair4.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair4;
+                    ownchair = chair4;
                 }
                 else
                 {

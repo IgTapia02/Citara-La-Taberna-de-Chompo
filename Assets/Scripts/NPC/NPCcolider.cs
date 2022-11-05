@@ -5,24 +5,27 @@ using UnityEngine;
 public class NPCcolider : MonoBehaviour
 {
 
-    public bool atendido;
+    public bool atendido1,atendido2;
     bool colision;
     GameObject Player;
     void Start()
     {
         Player = GameObject.Find("Player");
-        atendido = false;
+        atendido1 = false;
+        atendido2 = false;
     }
     void Update()
     {
         Debug.Log(colision);
         if (colision == true)
         {
-            Debug.Log("istriger");
             if (Input.GetKeyDown((Player.GetComponent<Player>().coger)))
             {
-                Debug.Log(atendido);
-                atendido = true;
+                atendido1 = true;
+            }
+            if (Input.GetKeyDown((Player.GetComponent<Player>().dejar)))
+            {
+                atendido2 = true;
             }
         }
     }

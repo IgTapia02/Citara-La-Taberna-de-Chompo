@@ -13,24 +13,28 @@ public class MaquinaZumos : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(colision);
         if (colision == true)
         {
             if (player.Inventario[0] == 0)
             {
-                if (Input.GetKeyDown((player.coger)) && (player.Comandas[0] == 1))
+                if (Input.GetKeyDown((player.dejar)) && (player.Comandas[0] == 1))
                 {
                     player.Comandas[0] = 0;
+                    player.Comandas[0] = player.Comandas[1];
+                    player.Comandas[1] = player.Comandas[2];
+                    player.Comandas[2] = 0;
                     player.numcomandas--;
                     player.Coger(1);
                 }
-                else if (Input.GetKeyDown((player.coger)) && (player.Comandas[1] == 1))
+                else if (Input.GetKeyDown((player.dejar)) && (player.Comandas[1] == 1))
                 {
                     player.Comandas[1] = 0;
+                    player.Comandas[1] = player.Comandas[2];
+                    player.Comandas[2] = 0;
                     player.numcomandas--;
                     player.Coger(1);
                 }
-                else if (Input.GetKeyDown((player.coger)) && (player.Comandas[2] == 1))
+                else if (Input.GetKeyDown((player.dejar)) && (player.Comandas[2] == 1))
                 {
                     player.Comandas[2] = 0;
                     player.numcomandas--;
