@@ -158,7 +158,7 @@ public class NPCBase : MonoBehaviour
     void Pedir()
     {
         tiempo = 0;
-        pedido = Random.Range(1,) //zumo
+        pedido = Random.Range(1,6); //zumo
         player.Apuntar(pedido);
         state = 3;
     }
