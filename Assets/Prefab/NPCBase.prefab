@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6437413679441662208}
   m_Layer: 0
   m_Name: NPCBase
-  m_TagString: Untagged
+  m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   speed: 0
+  colider: {fileID: 7111848730095028956, guid: 776d4b9a0f2579444b5a486c1194a4b6, type: 3}
   chair1: {fileID: 0}
   chair2: {fileID: 0}
   chair3: {fileID: 0}
   chair4: {fileID: 0}
+  whaitimeantespedir: 0
+  whaitimedespuespedir: 0
+  pedido: 0
