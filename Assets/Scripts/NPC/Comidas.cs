@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Comidas : MonoBehaviour
 {
-    public int DineroComida;
-    public int TiempoComida;
-    int comida;
-
-
-
+    
     
 }
