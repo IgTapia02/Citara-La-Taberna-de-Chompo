@@ -23,8 +23,8 @@ public class NPCManager : MonoBehaviour
     int dia6;
 
     float tiempo;
-    int npcCreados;
-    public bool last;
+    int npcgen;
+    public int npcCreados;
 
     GameManager gameManager;
 
@@ -32,7 +32,7 @@ public class NPCManager : MonoBehaviour
 
     private void Start()
     {
-        last = false;
+        npcgen = 0;
         gameManager = FindObjectOfType<GameManager>();
     }
     void Update()
@@ -43,13 +43,16 @@ public class NPCManager : MonoBehaviour
             if (tiempo > 10)
             {
                 tiempo = 0;
-                Instantiate(NPC);
-                npcCreados++;
+                if (npcgen < dia1)
+                {
+                    Instantiate(NPC);
+                    npcgen++;
+                }
             }
             if(npcCreados >= dia1)
             {
                 gameManager.dia = 2;
-                last = true;
+                SceneManager.LoadScene("ResumeMenu");
             }
         }
     }

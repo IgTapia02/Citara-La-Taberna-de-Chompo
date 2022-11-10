@@ -246,10 +246,9 @@ public class NPCBase : MonoBehaviour
         {
             if(state == 5)
             {
-                if(manager.last == true)
-                {
-                    SceneManager.LoadScene("ResumeMenu");
-                }
+
+                manager.npcCreados++;
+                
                 Destroy(this.gameObject);
             }
         }
