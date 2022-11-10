@@ -246,7 +246,7 @@ public class NPCBase : MonoBehaviour
         {
             if(state == 5)
             {
-
+                
                 manager.npcCreados++;
                 
                 Destroy(this.gameObject);
