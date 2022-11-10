@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1371,7 +1371,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482.47, y: 154.4}
+  m_AnchoredPosition: {x: -328, y: 69}
   m_SizeDelta: {x: 81.4176, y: 25.8048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411745257
@@ -1899,12 +1899,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NPC: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
-  dia1: 10
+  dia1: 2
   dia2: 0
   dia3: 0
   dia4: 0
   dia5: 0
   dia6: 0
+  last: 0
   target: {fileID: 1577117695}
 --- !u!4 &651906187
 Transform:
@@ -2690,7 +2691,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482.47318, y: 215.005}
+  m_AnchoredPosition: {x: -328.00317, y: 129.60501}
   m_SizeDelta: {x: 81.4176, y: 25.8048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &879100195
@@ -2968,7 +2969,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482.47, y: 110.6}
+  m_AnchoredPosition: {x: -328, y: 25.200005}
   m_SizeDelta: {x: 81.4176, y: 25.8048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973588434
@@ -3797,7 +3798,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -482.47, y: 185.5}
+  m_AnchoredPosition: {x: -328, y: 100.100006}
   m_SizeDelta: {x: 81.4176, y: 25.8048}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214995812
@@ -4186,7 +4187,7 @@ GameObject:
   - component: {fileID: 1491668637}
   - component: {fileID: 1491668636}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Dinero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4209,7 +4210,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 424, y: 213.8}
+  m_AnchoredPosition: {x: 284.7, y: 136.00002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1491668636
@@ -4539,7 +4540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 424.3, y: 210.8}
+  m_AnchoredPosition: {x: 285, y: 133}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554421373
@@ -6120,7 +6121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -481, y: 162}
+  m_AnchoredPosition: {x: -326.53, y: 76.600006}
   m_SizeDelta: {x: 55.4361, y: 355.4821}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2109974871

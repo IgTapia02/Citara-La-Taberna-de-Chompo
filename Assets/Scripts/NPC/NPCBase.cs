@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPCBase : MonoBehaviour
 {
@@ -245,6 +246,10 @@ public class NPCBase : MonoBehaviour
         {
             if(state == 5)
             {
+                if(manager.last == true)
+                {
+                    SceneManager.LoadScene("ResumeMenu");
+                }
                 Destroy(this.gameObject);
             }
         }

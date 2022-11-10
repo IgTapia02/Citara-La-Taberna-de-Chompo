@@ -7,12 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public int dineroPJ = 0;
     public TMP_Text Dinero;
-
     public int dia = 1, mes;
 
     void Start()
     {
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
