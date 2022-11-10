@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public int dineroPJ = 0;
     public TMP_Text Dinero;
 
-    int dia, mes;
+    public int dia = 1, mes;
 
     void Start()
     {
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Dinero.text = dineroPJ + "$";
+        Debug.Log(dia);
     }
 
     public void Pagar(int pedido)

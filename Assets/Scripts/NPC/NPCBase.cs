@@ -4,24 +4,33 @@ using UnityEngine;
 
 public class NPCBase : MonoBehaviour
 {
-    [SerializeField]
     Transform target;
 
+    [Header("Velocidad NPC")]
     [SerializeField]
     int speed;
 
+    [Header("Colider")]
     [SerializeField]
     GameObject colider;
 
+    [Header("Sillas")]
+    public GameObject chair1;
+    public GameObject chair2;
+    public GameObject chair3;
+    public GameObject chair4;
+
+    [Header("Tiempos que espera antes de irse")]
     [SerializeField]
-    public GameObject chair1, chair2, chair3, chair4, ownchair;
+    float antesPedir;
 
     [SerializeField]
-    float whaitimeantespedir;
+    float desPuespedir;
 
     [SerializeField]
-    float whaitimedespuespedir;
-    
+    float comiendo;
+
+    [Header("Pedido que realiza")]
     public int pedido;
 
     bool existcolider;
@@ -31,6 +40,7 @@ public class NPCBase : MonoBehaviour
     GameManager pagar;
     NPCManager manager;
     GameObject thisColider;
+    GameObject ownchair;
     void Start()
     {
         pagar = FindObjectOfType<GameManager>();
@@ -59,16 +69,16 @@ public class NPCBase : MonoBehaviour
             Debug.Log("esperandocomanda");
             Sentado();
         }
-        /*if (state == 1)
+        if (state == 1)
         {
             tiempo += Time.deltaTime;
             Debug.Log(tiempo);
-            if(tiempo > whaitimeantespedir)
+            if(tiempo > antesPedir)
             {
                 tiempo = 0;
                 state = 5;
             }
-        }*/
+        }
         if(state == 2)
         {
             Debug.Log("pidiendo");
@@ -94,7 +104,7 @@ public class NPCBase : MonoBehaviour
             Debug.Log("comiendo");
             tiempo += Time.deltaTime;
             Debug.Log(tiempo);
-            if (tiempo > 6)
+            if (tiempo > comiendo)
             {
                 tiempo = 0;
                 state = 5;

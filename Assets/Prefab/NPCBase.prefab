@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6430721289614295180}
   - component: {fileID: 8103608757097487490}
   - component: {fileID: 6437413679441662208}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPCBase
   m_TagString: Npc
   m_Icon: {fileID: 0}
@@ -127,13 +127,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7b479932581bf74aae1bfb55928a221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   speed: 0
   colider: {fileID: 7111848730095028956, guid: 776d4b9a0f2579444b5a486c1194a4b6, type: 3}
   chair1: {fileID: 0}
   chair2: {fileID: 0}
   chair3: {fileID: 0}
   chair4: {fileID: 0}
-  whaitimeantespedir: 0
-  whaitimedespuespedir: 0
+  antesPedir: 10
+  desPuespedir: 0
+  comiendo: 4
   pedido: 0
