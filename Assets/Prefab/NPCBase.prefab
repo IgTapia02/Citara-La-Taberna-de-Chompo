@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   colider: {fileID: 7111848730095028956, guid: 776d4b9a0f2579444b5a486c1194a4b6, type: 3}
-  comida: {fileID: 65442236780139646, guid: 3dd55466f2420f94ab6f86afba5761e9, type: 3}
+  comida: {fileID: 5526891800164565127, guid: 3dd55466f2420f94ab6f86afba5761e9, type: 3}
   chair1: {fileID: 0}
   chair2: {fileID: 0}
   chair3: {fileID: 0}

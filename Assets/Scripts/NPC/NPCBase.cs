@@ -142,7 +142,7 @@ public class NPCBase : MonoBehaviour
             Destroy(thisColider);
             existcolider = false;
             thisComida = Instantiate(comida, transform);
-            comida.transform.position = new Vector3(0.28f, 0.957f, -0.84f);
+            comida.transform.position = new Vector3(-0.41f, 1.07f, 0.13f);
             state = 2;
         }
 
