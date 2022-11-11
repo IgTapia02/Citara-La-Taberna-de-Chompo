@@ -45,6 +45,15 @@ public class Cocina : MonoBehaviour
                     player.numcomandas--;
                     player.Coger(4);
                 }
+                else if (Input.GetKeyDown((player.dejar)) && (player.Comandas[0] == 5))
+                {
+                    player.Comandas[0] = 0;
+                    player.Comandas[0] = player.Comandas[1];
+                    player.Comandas[1] = player.Comandas[2];
+                    player.Comandas[2] = 0;
+                    player.numcomandas--;
+                    player.Coger(5);
+                }
             }
            if (player.Inventario[0] == 0)
             {
@@ -73,6 +82,14 @@ public class Cocina : MonoBehaviour
                     player.numcomandas--;
                     player.Coger(4);
                 }
+                else if (Input.GetKeyDown((player.dejar)) && (player.Comandas[1] == 5))
+                {
+                    player.Comandas[1] = 0;
+                    player.Comandas[1] = player.Comandas[2];
+                    player.Comandas[2] = 0;
+                    player.numcomandas--;
+                    player.Coger(5);
+                }
 
 
             }
@@ -98,6 +115,12 @@ public class Cocina : MonoBehaviour
                     player.Comandas[3] = 0;
                     player.numcomandas--;
                     player.Coger(4);
+                }
+                else if (Input.GetKeyDown((player.dejar)) && (player.Comandas[3] == 5))
+                {
+                    player.Comandas[3] = 0;
+                    player.numcomandas--;
+                    player.Coger(5);
                 }
             }
 

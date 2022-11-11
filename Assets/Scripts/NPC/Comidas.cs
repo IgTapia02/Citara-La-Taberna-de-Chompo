@@ -22,12 +22,12 @@ public class Comidas : MonoBehaviour
 
     void Start()
     {
-        pedido = Random.Range(1, 6);
+        spriterender = GetComponent<SpriteRenderer>();
+ 
     }
     void Update()
     {
-        spriterender.sprite = paella;
-        /* switch (pedido)
+        switch (pedido)
          {
              case 6:
                  spriterender.sprite = paella;
@@ -47,7 +47,14 @@ public class Comidas : MonoBehaviour
              case 1:
                  spriterender.sprite = zumo;
                  break;
-         }*/
+         }
+    }
+
+    public int EstablecerPedido(int pedidoNPC)
+    {
+        pedido = pedidoNPC;
+
+        return pedido;
     }
 
 }

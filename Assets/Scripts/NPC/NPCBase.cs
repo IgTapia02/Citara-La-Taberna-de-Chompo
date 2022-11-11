@@ -143,7 +143,6 @@ public class NPCBase : MonoBehaviour
             existcolider = false;
             thisComida = Instantiate(comida, transform);
             comida.transform.position = new Vector3(0.28f, 0.957f, -0.84f);
-            pedido = thisComida.GetComponent<Comidas>().pedido;
             state = 2;
         }
 
@@ -179,6 +178,8 @@ public class NPCBase : MonoBehaviour
     void Pedir()
     {
         tiempo = 0;
+        pedido = Random.Range(1, 6);
+        thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
         player.Apuntar(pedido);
         state = 3;
     }
