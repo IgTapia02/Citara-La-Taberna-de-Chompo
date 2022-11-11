@@ -14,6 +14,8 @@ public class NPCBase : MonoBehaviour
     [Header("Colider")]
     [SerializeField]
     GameObject colider;
+    [SerializeField]
+    GameObject comida;
 
     [Header("Sillas")]
     public GameObject chair1;
@@ -41,6 +43,7 @@ public class NPCBase : MonoBehaviour
     GameManager pagar;
     NPCManager manager;
     GameObject thisColider;
+    GameObject thisComida;
     GameObject ownchair;
     void Start()
     {
@@ -136,9 +139,12 @@ public class NPCBase : MonoBehaviour
 
         if(thisColider.GetComponent<NPCcolider>().atendido1== true)
         {
-            state = 2;
             Destroy(thisColider);
             existcolider = false;
+            thisComida = Instantiate(comida, transform);
+            comida.transform.position = new Vector3(0.28f, 0.957f, -0.84f);
+            pedido = thisComida.GetComponent<Comidas>().pedido;
+            state = 2;
         }
 
 
@@ -160,6 +166,7 @@ public class NPCBase : MonoBehaviour
                 player.Inventario[0] = 0;
                 pagar.Pagar(pedido);
                 Destroy(thisColider);
+                Destroy(thisComida);
                 existcolider = false;
                 state = 4;
             }
@@ -172,7 +179,6 @@ public class NPCBase : MonoBehaviour
     void Pedir()
     {
         tiempo = 0;
-        pedido = Random.Range(1,5);
         player.Apuntar(pedido);
         state = 3;
     }
