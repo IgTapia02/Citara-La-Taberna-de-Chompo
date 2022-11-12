@@ -23,11 +23,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 direction = new Vector3(Input.GetAxis("Horizontal"), 0 , Input.GetAxis("Vertical"));
-
-        Rigidbody rigidbody = GetComponent<Rigidbody>();
-        rigidbody.MovePosition(rigidbody.position + direction * speed * Time.deltaTime);
+        GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical")) * speed;
 
     }
 

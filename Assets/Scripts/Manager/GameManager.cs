@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         {
             dineroPJ += 10;
         }
-        if(pedido == 2 || pedido == 3 || pedido == 4)
+        if(pedido == 2 || pedido == 3 || pedido == 4 || pedido == 5)
         {
             dineroPJ += 100;
         }
