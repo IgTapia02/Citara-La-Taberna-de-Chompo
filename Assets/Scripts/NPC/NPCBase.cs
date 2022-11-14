@@ -51,6 +51,7 @@ public class NPCBase : MonoBehaviour
         pagar = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
         manager = FindObjectOfType<NPCManager>();
+        transform.position = manager.transform.position;
         existcolider = false;
         tiempo = 0f;
         state = 0;
