@@ -67,7 +67,7 @@ public class NPCBase : MonoBehaviour
         if (state == 0)
         {
             Debug.Log("entrando");
-            Move();
+            Move(); 
         }
         if(state == 1)
         {
