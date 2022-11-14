@@ -1,10 +1,10 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Cocina : MonoBehaviour
 {
-    [SerializeField]
+    //[SerializeField]
     float tiempoCocinado;
     bool colision;
     Player player;
@@ -227,7 +227,7 @@ public class Cocina : MonoBehaviour
                     player.numcomandas--;
                     player.Coger(5);
                 }
-            }*/
+            }
 
         }
         
@@ -246,4 +246,4 @@ public class Cocina : MonoBehaviour
             colision = false;
         }
     }
-}
+}*/

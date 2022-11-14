@@ -47,6 +47,7 @@ public class NPCBase : MonoBehaviour
     GameObject ownchair;
     void Start()
     {
+        pedido = Random.Range(1, 6);
         pagar = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>();
         manager = FindObjectOfType<NPCManager>();
@@ -76,7 +77,6 @@ public class NPCBase : MonoBehaviour
         if (state == 1)
         {
             tiempo += Time.deltaTime;
-            Debug.Log(tiempo);
             if(tiempo > antesPedir)
             {
                 tiempo = 0;
@@ -137,7 +137,7 @@ public class NPCBase : MonoBehaviour
             
         }
 
-        if(thisColider.GetComponent<NPCcolider>().atendido1== true)
+        if(thisColider.GetComponent<NPCcolider>().atendido1== true && player.Comandas[2]==0)
         {
             Destroy(thisColider);
             existcolider = false;
@@ -177,11 +177,11 @@ public class NPCBase : MonoBehaviour
     }
     void Pedir()
     {
-        tiempo = 0;
-        pedido = Random.Range(1, 6);
-        thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
-        player.Apuntar(pedido);
-        state = 3;
+            tiempo = 0;
+            thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
+            player.Apuntar(pedido);
+            state = 3;
+
     }
 
 
