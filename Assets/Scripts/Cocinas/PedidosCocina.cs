@@ -16,36 +16,41 @@ public class PedidosCocina : MonoBehaviour
     Sprite paella;
     [SerializeField]
     Sprite tortilla;
-
+    [SerializeField]
+    Sprite temporizador;
 
     [SerializeField]
     float tiempoPreparar;
 
 
     float time;
-    Player player;
-
-    public int pedido;
     public bool listo;
-
+    public bool recogido;
+    public int pedido;
+    Cocina2 cocina;
 
     void Start()
     {
+        recogido = false;
         listo = false;
         time = 0;
-        player = FindObjectOfType<Player>();
         spriterender = GetComponent<SpriteRenderer>();
-        pedido = player.Comandas[0];
-        player.Comandas[0] = 0;
-        player.Comandas[0] = player.Comandas[1];
-        player.Comandas[1] = player.Comandas[2];
-        player.Comandas[2] = 0;
-        player.numcomandas--;
+        cocina = FindObjectOfType<Cocina2>();
+
+        pedido = cocina.pedido;
+        spriterender.sprite = temporizador;
 
     }
     void Update()
     {
         if (time >= tiempoPreparar)
+        {
+            listo = true;
+            Debug.Log(listo);
+        }
+        else { time += Time.deltaTime; }
+
+        if(listo == true)
         {
             switch (pedido)
             {
@@ -66,9 +71,10 @@ public class PedidosCocina : MonoBehaviour
                     break;
 
             }
-            listo = true;
-            Debug.Log(listo);
         }
-        else { time += Time.deltaTime; }
+        if(recogido == true)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
