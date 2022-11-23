@@ -11,6 +11,7 @@ public class Cocina2 : MonoBehaviour
     Player player;
     public int pedido;
     int ncocina;
+    GameObject vacio;
 
     [SerializeField]
     GameObject[] cocinas = new GameObject[3];
@@ -95,22 +96,23 @@ public class Cocina2 : MonoBehaviour
                         if(ncocina==1)
                         {
                             cocinas[0].GetComponent<PedidosCocina>().recogido = true;
+                            cocinas[0] = vacio;
                         }
                         else if (ncocina == 2)
                         {
                             cocinas[0].GetComponent<PedidosCocina>().recogido = true;
                             cocinas[0] = cocinas[1];
-                            Destroy(cocinas[1]);
+                            cocinas[1] = vacio;
 
                             cocinas[0].transform.position = new Vector3(8.73f, 4.19f, 1.26f);
 
                         }
-                        else if(ncocina == 2)
+                        else if(ncocina == 3)
                         {
                             cocinas[0].GetComponent<PedidosCocina>().recogido = true;
                             cocinas[0] = cocinas[1];
                             cocinas[1] = cocinas[2];
-                            Destroy(cocinas[2]);
+                            cocinas[2] = vacio;
                             
 
                             cocinas[0].transform.position = new Vector3(8.73f, 4.19f, 1.26f);

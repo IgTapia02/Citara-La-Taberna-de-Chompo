@@ -23,37 +23,37 @@ public class Comidas : MonoBehaviour
     void Start()
     {
         spriterender = GetComponent<SpriteRenderer>();
- 
+
     }
     void Update()
     {
         switch (pedido)
-         {
-             case 6:
-                 spriterender.sprite = paella;
-                 break;
-             case 5:
-                 spriterender.sprite = hamburgesa;
-                 break;
-             case 4:
-                 spriterender.sprite = pollo;
-                 break;
-             case 3:
-                 spriterender.sprite = tortilla;
-                 break;
-             case 2:
-                 spriterender.sprite = huevosPatata;
-                 break;
-             case 1:
-                 spriterender.sprite = zumo;
-                 break;
-         }
+        {
+            case 6:
+                spriterender.sprite = paella;
+                break;
+            case 5:
+                spriterender.sprite = hamburgesa;
+                break;
+            case 4:
+                spriterender.sprite = pollo;
+                break;
+            case 3:
+                spriterender.sprite = tortilla;
+                break;
+            case 2:
+                spriterender.sprite = huevosPatata;
+                break;
+            case 1:
+                spriterender.sprite = zumo;
+                break;
+        }
     }
 
     public int EstablecerPedido(int pedidoNPC)
     {
         pedido = pedidoNPC;
-
+       
         return pedido;
     }
 
