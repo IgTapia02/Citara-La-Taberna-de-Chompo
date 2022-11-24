@@ -12,14 +12,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int zumos,comidas;
 
-    GameData data;
+    public GameData data;
 
     public GameData gameData;
     //public int dineroPJ = 0;
     public TMP_Text Dinero;
     //public int dia, semana;
-
-    public static GameManager current;
 
     void Start()
     {
@@ -33,7 +31,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Dinero.text = gameData.dineroPJ + "$";
-        Debug.Log(gameData.dia);
+
+        if(Input.GetKey(KeyCode.P))
+        {
+            Guardar();
+        }
     }
 
     public void Pagar(int pedido)
@@ -47,12 +49,14 @@ public class GameManager : MonoBehaviour
             gameData.dineroPJ += comidas;
         }
     }
-    public void Save()
+    
+    public void Guardar()
     {
         data = new GameData();
-        data.dia = GameManager.current.gameData.dia;
-        data.semana = GameManager.current.gameData.dia;
-        data.dineroPJ = GameManager.current.gameData.dia;
+
+        data.dia = gameData.dia;
+        data.semana = gameData.semana;
+        data.dineroPJ = gameData.dineroPJ;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
         bf.Serialize(file, data);
@@ -65,7 +69,7 @@ public class GameManager : MonoBehaviour
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
             data = (GameData)bf.Deserialize(file);
-            GameManager.current.gameData = data;
+            gameData = data;
             file.Close();
         }
     }
@@ -74,7 +78,7 @@ public class GameManager : MonoBehaviour
 [System.Serializable]
 public class GameData
 {
-    public int dineroPJ = 0;
+    public int dineroPJ;
     public int dia, semana;
 
 }

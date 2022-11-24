@@ -12,6 +12,13 @@ public class MenuPausa : MonoBehaviour
     GameObject PauseMenu;
     bool pause=false;
 
+    GameManager gameManager;
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Update()
     {
         if(Input.GetKey(KeyCode.Escape))
@@ -38,5 +45,6 @@ public class MenuPausa : MonoBehaviour
         UI.SetActive(true);
         PauseMenu.SetActive(false);
     }
+
 }
 

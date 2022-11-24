@@ -488,6 +488,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zumos: 10
   comidas: 100
+  data:
+    dineroPJ: 0
+    dia: 0
+    semana: 0
   gameData:
     dineroPJ: 0
     dia: 0
@@ -594,7 +598,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 310880237}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Save
+        m_MethodName: Guardar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

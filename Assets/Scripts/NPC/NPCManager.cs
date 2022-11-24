@@ -51,7 +51,7 @@ public class NPCManager : MonoBehaviour
             }
             if(npcCreados >= dia1)
             {
-                gameManager.gameData.dia = 2;
+                gameManager.gameData.dia++;
                 SceneManager.LoadScene("ResumeMenu");
             }
         }
