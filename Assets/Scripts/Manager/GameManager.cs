@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-using TMPro;
+using UnityEngine.SceneManagement;
 [System.Serializable]
 
 public class GameManager : MonoBehaviour
@@ -12,30 +12,29 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int zumos,comidas;
 
+    string primerRestaurante = "MainRestaurant";
     public GameData data;
 
     public GameData gameData;
-    //public int dineroPJ = 0;
-    public TMP_Text Dinero;
-    //public int dia, semana;
+
 
     void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void NewGame()
     {
         gameData.dineroPJ = 0;
         gameData.dia = 1;
         gameData.semana = 1;
-        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene(primerRestaurante);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CambioDia()
     {
-        Dinero.text = gameData.dineroPJ + "$";
-
-        if(Input.GetKey(KeyCode.P))
-        {
-            Guardar();
-        }
+        gameData.dia++;
+        SceneManager.LoadScene("ResumeMenu");
     }
 
     public void Pagar(int pedido)
@@ -50,7 +49,7 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    public void Guardar()
+    public void Save()
     {
         data = new GameData();
 
@@ -66,6 +65,7 @@ public class GameManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
         {
+            SceneManager.LoadScene(primerRestaurante);
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
             data = (GameData)bf.Deserialize(file);

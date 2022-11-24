@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MenuPausa : MonoBehaviour
 {
 
     [SerializeField]
-    GameObject UI;
+    public GameObject UI;
 
     [SerializeField]
     GameObject PauseMenu;
+
     bool pause=false;
 
     GameManager gameManager;
@@ -28,6 +30,11 @@ public class MenuPausa : MonoBehaviour
                 Pausa();
             }
         }
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void Pausa()
