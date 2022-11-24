@@ -37,7 +37,7 @@ public class NPCManager : MonoBehaviour
     }
     void Update()
     {
-        if(gameManager.dia == 1)
+        if(gameManager.gameData.dia == 1)
         {
             tiempo += Time.deltaTime;
             if (tiempo > 10)
@@ -51,7 +51,7 @@ public class NPCManager : MonoBehaviour
             }
             if(npcCreados >= dia1)
             {
-                gameManager.dia = 2;
+                gameManager.gameData.dia = 2;
                 SceneManager.LoadScene("ResumeMenu");
             }
         }
