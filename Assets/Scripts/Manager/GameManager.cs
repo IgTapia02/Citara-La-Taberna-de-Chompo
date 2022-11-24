@@ -1,35 +1,84 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using UnityEngine.SceneManagement;
+[System.Serializable]
 
 public class GameManager : MonoBehaviour
 {
-    public int dineroPJ = 0;
-    public TMP_Text Dinero;
-    public int dia = 1, mes;
+    [Header("Precios comida")]
+    [SerializeField]
+    int zumos,comidas;
+
+    string primerRestaurante = "MainRestaurant";
+    public GameData data;
+
+    public GameData gameData;
+
 
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void NewGame()
     {
-        Dinero.text = dineroPJ + "$";
-        Debug.Log(dia);
+        gameData.dineroPJ = 0;
+        gameData.dia = 1;
+        gameData.semana = 1;
+        SceneManager.LoadScene(primerRestaurante);
+    }
+
+    public void CambioDia()
+    {
+        gameData.dia++;
+        SceneManager.LoadScene("ResumeMenu");
     }
 
     public void Pagar(int pedido)
     {
         if(pedido == 1)
         {
-            dineroPJ += 10;
+            gameData.dineroPJ += zumos;
         }
         if(pedido == 2 || pedido == 3 || pedido == 4 || pedido == 5)
         {
-            dineroPJ += 100;
+            gameData.dineroPJ += comidas;
         }
     }
+    
+    public void Save()
+    {
+        data = new GameData();
+
+        data.dia = gameData.dia;
+        data.semana = gameData.semana;
+        data.dineroPJ = gameData.dineroPJ;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
+        bf.Serialize(file, data);
+        file.Close();
+    }
+    public void Load()
+    {
+        if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
+        {
+            SceneManager.LoadScene(primerRestaurante);
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
+            data = (GameData)bf.Deserialize(file);
+            gameData = data;
+            file.Close();
+        }
+    }
+}
+
+[System.Serializable]
+public class GameData
+{
+    public int dineroPJ;
+    public int dia, semana;
+
 }
