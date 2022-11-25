@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Precios comida")]
     [SerializeField]
-    int zumos,comidas;
+    int zumos,comidas,pagoMes;
 
     string primerRestaurante = "MainRestaurant";
     public GameData data;
@@ -34,6 +34,12 @@ public class GameManager : MonoBehaviour
     public void CambioDia()
     {
         gameData.dia++;
+        if(gameData.dia>6)
+        {
+            gameData.semana++;
+            gameData.dia = 1;
+            gameData.dineroPJ -= pagoMes;
+        }
         SceneManager.LoadScene("ResumeMenu");
     }
 

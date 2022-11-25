@@ -22,6 +22,7 @@ public class NPCManager : MonoBehaviour
     [SerializeField]
     int dia6;
 
+    int npcNum;
     float tiempo;
     int npcgen;
     public int npcCreados;
@@ -34,26 +35,44 @@ public class NPCManager : MonoBehaviour
     {
         npcgen = 0;
         gameManager = FindObjectOfType<GameManager>();
+        switch (gameManager.gameData.dia)
+        {
+            case 1:
+                npcNum = dia1;
+                break;
+            case 2:
+                npcNum = dia2;
+                break;
+            case 3:
+                npcNum = dia3;
+                break;
+            case 4:
+                npcNum = dia4;
+                break;
+            case 5:
+                npcNum = dia5;
+                break;
+            case 6:
+                npcNum = dia6;
+                break;
+        }
     }
     void Update()
     {
-        if(gameManager.gameData.dia == 1)
-        {
             tiempo += Time.deltaTime;
             if (tiempo > 10)
             {
                 tiempo = 0;
-                if (npcgen < dia1)
+                if (npcgen < npcNum)
                 {
                     Instantiate(NPC);
                     npcgen++;
                 }
             }
-            if(npcCreados >= dia1)
+            if(npcCreados >= npcNum)
             {
                 gameManager.CambioDia();
 
             }
-        }
     }
 }

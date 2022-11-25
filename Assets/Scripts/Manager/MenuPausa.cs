@@ -12,14 +12,18 @@ public class MenuPausa : MonoBehaviour
     [SerializeField]
     GameObject PauseMenu;
 
+    GameObject manager;
+
     bool pause=false;
 
     GameManager gameManager;
 
     void Start()
     {
+        manager = GameObject.Find("GameManager");
+        Time.timeScale = 1f;
         gameManager = FindObjectOfType<GameManager>();
-        DontDestroyOnLoad(this.gameObject);
+       
     }
     void Update()
     {
@@ -34,6 +38,7 @@ public class MenuPausa : MonoBehaviour
 
     public void MainMenu()
     {
+        Destroy(manager);
         SceneManager.LoadScene("MainMenu");
     }
 

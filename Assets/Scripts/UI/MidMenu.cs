@@ -7,21 +7,31 @@ public class MidMenu : MonoBehaviour
 {
     GameManager gameManager;
     MenuPausa menu;
+
+    InfoMidMenu midMenu;
+
+    int cont;
     void Start()
     {
+        cont = 0;
         gameManager = FindObjectOfType<GameManager>();
         menu = FindObjectOfType<MenuPausa>();
-
-        menu.UI.SetActive(false);
+        midMenu = FindObjectOfType<InfoMidMenu>();
         gameManager.Save();
     }
     void Update()
     {
      if(Input.GetKey(KeyCode.Space))
         {
-
-            SceneManager.LoadScene("MainRestaurant");
-            menu.UI.SetActive(true);
+            if(cont == 0)
+            {
+                midMenu.SumDinero();
+                cont++;
+            }
+            else if (cont == 1)
+            {
+                SceneManager.LoadScene("MainRestaurant");
+            }
         }
     }
 }

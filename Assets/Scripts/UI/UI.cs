@@ -6,6 +6,7 @@ using TMPro;
 public class UI : MonoBehaviour
 {
     public TMP_Text Dinero;
+    public TMP_Text Dia;
 
     GameManager manager;
     void Start()
@@ -17,5 +18,6 @@ public class UI : MonoBehaviour
     void Update()
     {
         Dinero.text = manager.gameData.dineroPJ + "$";
+        Dia.text = "Dia: " + manager.gameData.dia;
     }
 }

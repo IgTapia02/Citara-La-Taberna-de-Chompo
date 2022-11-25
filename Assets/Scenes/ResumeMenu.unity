@@ -571,6 +571,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 136478949}
+  - {fileID: 1958224517}
   m_Father: {fileID: 741106932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -764,6 +765,7 @@ GameObject:
   - component: {fileID: 1555552807}
   - component: {fileID: 1555552806}
   - component: {fileID: 1555552805}
+  - component: {fileID: 1555552809}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -845,7 +847,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 741106932}
-  - {fileID: 1958224517}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -854,6 +855,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1555552809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555552804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcb9e5733fe2d3b4d953161cad7eebff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sumDinero: {fileID: 1958224515}
 --- !u!1 &1806673784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,16 +1074,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958224514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1555552808}
+  m_Father: {fileID: 1059705440}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -154.51584, y: 76.75618}
+  m_AnchoredPosition: {x: -155.89597, y: 78.12245}
   m_SizeDelta: {x: 142.2622, y: 32.282}
   m_Pivot: {x: 0.5, y: 0.5}
