@@ -26,7 +26,7 @@ public class InfoMidMenu : MonoBehaviour
     {
         dinero2++;
         yield return new WaitForSeconds(0.005f);
-        if(dinero2 != gameManager.gameData.dineroPJ)
+        if(dinero2 != gameManager.gameData.dineroPJ && gameManager.gameData.dineroPJ != 0)
         {
             StartCoroutine(Esperar());
         }
