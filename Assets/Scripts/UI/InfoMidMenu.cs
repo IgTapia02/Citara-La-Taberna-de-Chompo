@@ -11,7 +11,8 @@ public class InfoMidMenu : MonoBehaviour
     TMP_Text sumDinero;
 
     int dinero2;
-    void Start()
+
+    private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
     }
@@ -20,19 +21,14 @@ public class InfoMidMenu : MonoBehaviour
     {
         sumDinero.text = dinero2 + "$";
     }
-    public int SumDinero()
+
+    public IEnumerator Esperar()
     {
-        do
+        dinero2++;
+        yield return new WaitForSeconds(0.005f);
+        if(dinero2 != gameManager.gameData.dineroPJ)
         {
-            dinero2++;
             StartCoroutine(Esperar());
-        } while (dinero2 != gameManager.gameData.dineroPJ);
-
-        return dinero2;
-    }
-
-    IEnumerator Esperar()
-    {
-        yield return new WaitForSeconds(10f);
+        }
     }
 }

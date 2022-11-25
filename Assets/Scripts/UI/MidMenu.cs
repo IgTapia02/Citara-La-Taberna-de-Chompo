@@ -6,26 +6,26 @@ using UnityEngine.SceneManagement;
 public class MidMenu : MonoBehaviour
 {
     GameManager gameManager;
-    MenuPausa menu;
 
     InfoMidMenu midMenu;
 
+    public bool start;
     int cont;
     void Start()
     {
+        start = false;
         cont = 0;
         gameManager = FindObjectOfType<GameManager>();
-        menu = FindObjectOfType<MenuPausa>();
         midMenu = FindObjectOfType<InfoMidMenu>();
         gameManager.Save();
     }
     void Update()
     {
-     if(Input.GetKey(KeyCode.Space))
+     if(Input.GetKeyDown(KeyCode.Space))
         {
             if(cont == 0)
             {
-                midMenu.SumDinero();
+                StartCoroutine(midMenu.Esperar());
                 cont++;
             }
             else if (cont == 1)
