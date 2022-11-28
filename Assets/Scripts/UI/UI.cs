@@ -18,6 +18,6 @@ public class UI : MonoBehaviour
     void Update()
     {
         Dinero.text = manager.gameData.dineroPJ + "$";
-        Dia.text = "Dia: " + manager.gameData.dia;
+        Dia.text = "" + manager.gameData.dia;
     }
 }

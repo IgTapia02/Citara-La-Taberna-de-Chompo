@@ -23,13 +23,9 @@ public class Dias : MonoBehaviour
     [SerializeField]
     Image calendario;
 
-    [SerializeField]
-    TMP_Text num;
-
     void Start()
     {
         game = FindObjectOfType<GameManager>();
-        num.text = game.data.dia + "";
     }
 
     // Update is called once per frame

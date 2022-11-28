@@ -352,9 +352,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bf5aded205e638488add6c3a6ed107c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zumos: 10
-  comidas: 100
-  pagoMes: 200
+  zumos: 5
+  comidas: 10
+  pagoMes: 269
   data:
     dineroPJ: 0
     dia: 0
