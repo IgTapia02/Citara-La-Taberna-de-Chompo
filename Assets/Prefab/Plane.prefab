@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 232313252100916249}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 8.73, y: 4.19, z: -0.94}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -60,12 +60,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93a529b2d60e9d41ba7f275566b8f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hamburgesa: {fileID: 21300000, guid: 939b9bc805879c2448a2f8932cd49bf6, type: 3}
-  huevosPatata: {fileID: 21300000, guid: eeab3d08899be8d48b9675a4c2b0c5d6, type: 3}
-  pollo: {fileID: 21300000, guid: 98585e83e2d154b44a749833fa4886b6, type: 3}
-  paella: {fileID: 21300000, guid: 8539528479f4b5d489e565ba5ec3c0c7, type: 3}
-  tortilla: {fileID: 21300000, guid: aa4e4de37eed0464e8e525a9013d8d12, type: 3}
-  temporizador: {fileID: 21300000, guid: 2f2ad7d10b3eeeb4fad283d6f7424637, type: 3}
+  hamburgesa: {fileID: 21300000, guid: 058b462c802fe4b418cebbab096cff88, type: 3}
+  huevosPatata: {fileID: 21300000, guid: 08f44a4f1d617c24783fd6ba0147e9c7, type: 3}
+  pollo: {fileID: 21300000, guid: d06d5bb39561c4d4d9e88f5a25808e68, type: 3}
+  paella: {fileID: 21300000, guid: 7553b7133b41a9f45811e7df465bdef4, type: 3}
+  tortilla: {fileID: 21300000, guid: e0e8a6a0ac9f9714baafa50f159489b9, type: 3}
+  temporizador: {fileID: 21300000, guid: 7f6d8435553cda649b989cdbbe779298, type: 3}
   tiempoPreparar: 6
   listo: 0
   recogido: 0
@@ -111,12 +111,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2f2ad7d10b3eeeb4fad283d6f7424637, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f6d8435553cda649b989cdbbe779298, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.96, y: 12.87}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

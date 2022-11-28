@@ -37,6 +37,7 @@ public class NPCBase : MonoBehaviour
     public int pedido;
 
     bool existcolider;
+    bool exclamacion;
     int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
     float tiempo;
     Player player;
@@ -53,6 +54,7 @@ public class NPCBase : MonoBehaviour
         manager = FindObjectOfType<NPCManager>();
         transform.position = manager.transform.position;
         existcolider = false;
+        exclamacion = false;
         tiempo = 0f;
         state = 0;
         speed = 5;
@@ -129,7 +131,20 @@ public class NPCBase : MonoBehaviour
     }
     void Sentado()
     {
-        
+        if(exclamacion == false)
+        {
+            thisComida = Instantiate(comida, transform);
+            comida.transform.position = new Vector3(-0.41f, 1.07f, 0.13f);
+            exclamacion = true;
+        }
+        if(tiempo >= (antesPedir/2))
+        {
+            thisComida.GetComponent<Comidas>().mitadTiempo = true;
+        }
+        else
+        {
+            thisComida.GetComponent<Comidas>().mitadTiempo = false;
+        }
         if (existcolider == false)
         {
             thisColider = Instantiate(colider, transform);
@@ -142,8 +157,6 @@ public class NPCBase : MonoBehaviour
         {
             Destroy(thisColider);
             existcolider = false;
-            thisComida = Instantiate(comida, transform);
-            comida.transform.position = new Vector3(-0.41f, 1.07f, 0.13f);
             state = 2;
         }
 
@@ -178,9 +191,10 @@ public class NPCBase : MonoBehaviour
     }
     void Pedir()
     {
-            tiempo = 0;
-            thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
-            player.Apuntar(pedido);
+        tiempo = 0;
+        thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
+        thisComida.GetComponent<Comidas>().atendido = true;
+        player.Apuntar(pedido);
             state = 3;
 
     }

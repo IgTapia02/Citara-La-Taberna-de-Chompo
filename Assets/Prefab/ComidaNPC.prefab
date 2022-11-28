@@ -98,9 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pedido: 0
+  atendido: 0
+  mitadTiempo: 0
   hamburgesa: {fileID: 21300000, guid: 939b9bc805879c2448a2f8932cd49bf6, type: 3}
   huevosPatata: {fileID: 21300000, guid: eeab3d08899be8d48b9675a4c2b0c5d6, type: 3}
   pollo: {fileID: 21300000, guid: 98585e83e2d154b44a749833fa4886b6, type: 3}
   paella: {fileID: 21300000, guid: 8539528479f4b5d489e565ba5ec3c0c7, type: 3}
   zumo: {fileID: 21300000, guid: 4caf661a0f81dc04a8c29bbb96337036, type: 3}
   tortilla: {fileID: 21300000, guid: aa4e4de37eed0464e8e525a9013d8d12, type: 3}
+  Esperando1: {fileID: 21300000, guid: 9866561b9f48f0d4580348b8a318951d, type: 3}
+  Esperando2: {fileID: 21300000, guid: 208d2276e55409847a3e320249858e67, type: 3}

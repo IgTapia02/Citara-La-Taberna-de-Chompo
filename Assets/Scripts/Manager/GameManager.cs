@@ -79,6 +79,10 @@ public class GameManager : MonoBehaviour
             file.Close();
         }
     }
+    public void Salir()
+    {
+        Application.Quit();
+    }
 }
 
 [System.Serializable]

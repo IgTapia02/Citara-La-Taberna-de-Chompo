@@ -21,11 +21,16 @@ public class NPCManager : MonoBehaviour
     int dia5;
     [SerializeField]
     int dia6;
+    [SerializeField]
+    float timeMax;
+    [SerializeField]
+    float timeMin;
 
     int npcNum;
     float tiempo;
     int npcgen;
     public int npcCreados;
+    float numsalida;
 
     GameManager gameManager;
 
@@ -56,17 +61,19 @@ public class NPCManager : MonoBehaviour
                 npcNum = dia6;
                 break;
         }
+        numsalida = 10f;
     }
     void Update()
     {
             tiempo += Time.deltaTime;
-            if (tiempo > 10)
+            if (tiempo > numsalida)
             {
                 tiempo = 0;
                 if (npcgen < npcNum)
                 {
                     Instantiate(NPC);
                     npcgen++;
+                    numsalida = Random.Range(timeMin,timeMax +1);
                 }
             }
             if(npcCreados >= npcNum)
