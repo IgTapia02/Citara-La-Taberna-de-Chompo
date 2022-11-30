@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6430721289614295180}
   - component: {fileID: 8103608757097487490}
   - component: {fileID: 6437413679441662208}
+  - component: {fileID: 1542080749265587832}
   m_Layer: 6
   m_Name: NPCSpecial
   m_TagString: Npc
@@ -135,6 +136,18 @@ MonoBehaviour:
   chair3: {fileID: 0}
   chair4: {fileID: 0}
   antesPedir: 10
-  desPuespedir: 0
+  despuesPedir: 0
   comiendo: 4
   pedido: 0
+--- !u!114 &1542080749265587832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2716351430457958911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f64cd2d28190049aac9837c32cd7cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

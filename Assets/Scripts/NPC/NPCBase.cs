@@ -140,7 +140,7 @@ public class NPCBase : MonoBehaviour
             exclamacion = true;
         }
         if(tiempo >= (antesPedir/2))
-        {
+        { 
             thisComida.GetComponent<Comidas>().mitadTiempo = true;
         }
         else
