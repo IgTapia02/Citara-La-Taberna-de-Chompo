@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7693241131983987682}
   - component: {fileID: -7475996259942728099}
   m_Layer: 0
-  m_Name: NPCcolider
+  m_Name: NPCBasecolider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

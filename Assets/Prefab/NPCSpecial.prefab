@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8103608757097487490}
   - component: {fileID: 6437413679441662208}
   m_Layer: 6
-  m_Name: NPCBase
+  m_Name: NPCSpecial
   m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c8c0f047b74e5fd49b934a8d5d89939f, type: 2}
+  - {fileID: 2100000, guid: 22262639920f43d6be32430e4e58350d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,6 +135,6 @@ MonoBehaviour:
   chair3: {fileID: 0}
   chair4: {fileID: 0}
   antesPedir: 10
-  despuesPedir: 10
+  desPuespedir: 0
   comiendo: 4
   pedido: 0

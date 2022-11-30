@@ -28,7 +28,7 @@ public class NPCBase : MonoBehaviour
     float antesPedir;
 
     [SerializeField]
-    float desPuespedir;
+    float despuesPedir;
 
     [SerializeField]
     float comiendo;
@@ -84,6 +84,7 @@ public class NPCBase : MonoBehaviour
             {
                 tiempo = 0;
                 state = 5;
+                Destroy(thisComida);
             }
         }
         if(state == 2)
@@ -96,16 +97,17 @@ public class NPCBase : MonoBehaviour
             Debug.Log("esperandopedido");
             Sentado2();
         }
-        /*if (state == 3)
+        if (state == 3)
         {
             tiempo += Time.deltaTime;
             Debug.Log(tiempo);
-            if (tiempo > whaitimedespuespedir)
+            if (tiempo > despuesPedir)
             {
                 tiempo = 0;
                 state = 5;
+                Destroy(thisComida);
             }
-        }*/
+        }
         if(state == 4)
         {
             Debug.Log("comiendo");
@@ -164,7 +166,6 @@ public class NPCBase : MonoBehaviour
     }
     void Sentado2()
     {
-        tiempo = 0;
         if (existcolider == false)
         {
             thisColider = Instantiate(colider, transform);
@@ -182,6 +183,7 @@ public class NPCBase : MonoBehaviour
                 Destroy(thisComida);
                 existcolider = false;
                 state = 4;
+                tiempo = 0;
             }
             else
             {
@@ -195,7 +197,8 @@ public class NPCBase : MonoBehaviour
         thisComida.GetComponent<Comidas>().EstablecerPedido(pedido);
         thisComida.GetComponent<Comidas>().atendido = true;
         player.Apuntar(pedido);
-            state = 3;
+        state = 3;
+        tiempo = 0;
 
     }
 
