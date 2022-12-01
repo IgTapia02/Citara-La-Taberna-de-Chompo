@@ -25,11 +25,14 @@ public class MidMenu : MonoBehaviour
         {
             if(cont == 0)
             {
-                StartCoroutine(midMenu.Esperar());
-                cont++;
+                    StartCoroutine(midMenu.Esperar());
+                    cont++;
+
             }
             else if (cont == 1)
             {
+
+                gameManager.dineroDia = 0;
                 SceneManager.LoadScene("MainRestaurant");
             }
         }

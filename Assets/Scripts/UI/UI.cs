@@ -17,7 +17,7 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Dinero.text = manager.gameData.dineroPJ + "$";
+        Dinero.text = manager.dineroDia + "$";
         Dia.text = "" + manager.gameData.dia;
     }
 }

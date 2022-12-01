@@ -69,12 +69,10 @@ public class NPCBase : MonoBehaviour
     {
         if (state == 0)
         {
-            Debug.Log("entrando");
             Move(); 
         }
         if(state == 1)
         {
-            Debug.Log("esperandocomanda");
             Sentado();
         }
         if (state == 1)
@@ -89,18 +87,16 @@ public class NPCBase : MonoBehaviour
         }
         if(state == 2)
         {
-            Debug.Log("pidiendo");
             Pedir();
         }
         if(state == 3)
         {
-            Debug.Log("esperandopedido");
             Sentado2();
         }
         if (state == 3)
         {
             tiempo += Time.deltaTime;
-            Debug.Log(tiempo);
+         
             if (tiempo > despuesPedir)
             {
                 tiempo = 0;
@@ -110,9 +106,8 @@ public class NPCBase : MonoBehaviour
         }
         if(state == 4)
         {
-            Debug.Log("comiendo");
             tiempo += Time.deltaTime;
-            Debug.Log(tiempo);
+            
             if (tiempo > comiendo)
             {
                 tiempo = 0;
@@ -121,7 +116,6 @@ public class NPCBase : MonoBehaviour
         }
         if (state == 5)
         {
-            Debug.Log("marchandose");
             Move();
         }
     }

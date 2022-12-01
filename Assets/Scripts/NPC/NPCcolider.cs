@@ -16,7 +16,6 @@ public class NPCcolider : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(colision);
         if (colision == true)
         {
             if (Input.GetKeyDown((Player.GetComponent<Player>().coger)))

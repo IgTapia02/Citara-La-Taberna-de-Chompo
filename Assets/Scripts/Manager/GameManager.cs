@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int zumos,comidas,pagoMes;
 
+    public int dineroDia;
+    public int dinMidDia;
+
     string primerRestaurante = "MainRestaurant";
     public GameData data;
 
@@ -21,6 +24,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+    }
+    private void Update()
+    {
+        
+        Debug.Log(gameData.dineroPJ);
     }
 
     public void NewGame()
@@ -47,10 +55,12 @@ public class GameManager : MonoBehaviour
     {
         if(pedido == 1)
         {
+            dineroDia += zumos;
             gameData.dineroPJ += zumos;
         }
         if(pedido == 2 || pedido == 3 || pedido == 4 || pedido == 5)
         {
+            dineroDia += comidas;
             gameData.dineroPJ += comidas;
         }
     }

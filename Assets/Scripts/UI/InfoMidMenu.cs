@@ -10,8 +10,6 @@ public class InfoMidMenu : MonoBehaviour
     [SerializeField]
     TMP_Text sumDinero;
 
-    int dinero2;
-
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -19,14 +17,14 @@ public class InfoMidMenu : MonoBehaviour
 
     private void Update()
     {
-        sumDinero.text = dinero2 + "$";
+        sumDinero.text = gameManager.dinMidDia+ "$";
     }
 
     public IEnumerator Esperar()
     {
-        dinero2++;
+        gameManager.dinMidDia++;
         yield return new WaitForSeconds(0.005f);
-        if(dinero2 != gameManager.gameData.dineroPJ && gameManager.gameData.dineroPJ != 0)
+        if(gameManager.dinMidDia != gameManager.gameData.dineroPJ)
         {
             StartCoroutine(Esperar());
         }
