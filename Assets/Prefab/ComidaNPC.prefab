@@ -100,6 +100,7 @@ MonoBehaviour:
   pedido: 0
   atendido: 0
   mitadTiempo: 0
+  comiendo: 0
   hamburgesa: {fileID: 21300000, guid: 939b9bc805879c2448a2f8932cd49bf6, type: 3}
   huevosPatata: {fileID: 21300000, guid: eeab3d08899be8d48b9675a4c2b0c5d6, type: 3}
   pollo: {fileID: 21300000, guid: 98585e83e2d154b44a749833fa4886b6, type: 3}
@@ -108,3 +109,6 @@ MonoBehaviour:
   tortilla: {fileID: 21300000, guid: aa4e4de37eed0464e8e525a9013d8d12, type: 3}
   Esperando1: {fileID: 21300000, guid: 9866561b9f48f0d4580348b8a318951d, type: 3}
   Esperando2: {fileID: 21300000, guid: 208d2276e55409847a3e320249858e67, type: 3}
+  comiendo1: {fileID: 21300000, guid: 006b73b36bc80174097d35256f310d3b, type: 3}
+  comiendo2: {fileID: 21300000, guid: 7376e90ab339371489a2ff3004bd4a57, type: 3}
+  comiendo3: {fileID: 21300000, guid: 337694e36d447cb48affa6248cafeb40, type: 3}
