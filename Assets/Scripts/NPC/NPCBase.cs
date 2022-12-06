@@ -112,6 +112,7 @@ public class NPCBase : MonoBehaviour
             {
                 tiempo = 0;
                 state = 5;
+                Destroy(thisComida);
             }
         }
         if (state == 5)
@@ -174,7 +175,7 @@ public class NPCBase : MonoBehaviour
                 player.Inventario[0] = 0;
                 pagar.Pagar(pedido);
                 Destroy(thisColider);
-                Destroy(thisComida);
+                thisComida.GetComponent<Comidas>().comiendo = true;
                 existcolider = false;
                 state = 4;
                 tiempo = 0;
