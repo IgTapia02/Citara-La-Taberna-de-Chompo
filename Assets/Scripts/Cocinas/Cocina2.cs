@@ -90,17 +90,17 @@ public class Cocina2 : MonoBehaviour
             {
                 if(player.Inventario[0]==0)
                 {
-                    if(cocinas[0].GetComponent<PedidosCocina>().listo == true)
+                    if(cocinas[0].GetComponent<PedidosAnim>().listo == true)
                     {
-                        player.Coger(cocinas[0].GetComponent<PedidosCocina>().pedido);
+                        player.Coger(cocinas[0].GetComponent<PedidosAnim>().pedido);
                         if(ncocina==1)
                         {
-                            cocinas[0].GetComponent<PedidosCocina>().recogido = true;
+                            cocinas[0].GetComponent<PedidosAnim>().recogido = true;
                             cocinas[0] = vacio;
                         }
                         else if (ncocina == 2)
                         {
-                            cocinas[0].GetComponent<PedidosCocina>().recogido = true;
+                            cocinas[0].GetComponent<PedidosAnim>().recogido = true;
                             cocinas[0] = cocinas[1];
                             cocinas[1] = vacio;
 
@@ -109,7 +109,7 @@ public class Cocina2 : MonoBehaviour
                         }
                         else if(ncocina == 3)
                         {
-                            cocinas[0].GetComponent<PedidosCocina>().recogido = true;
+                            cocinas[0].GetComponent<PedidosAnim>().recogido = true;
                             cocinas[0] = cocinas[1];
                             cocinas[1] = cocinas[2];
                             cocinas[2] = vacio;
