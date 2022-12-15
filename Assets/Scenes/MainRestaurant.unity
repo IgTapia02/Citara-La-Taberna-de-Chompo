@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bfca44f692fd44894ec3223db4c8b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Contador: {fileID: 232313252100916249, guid: 44ed96c8e3a78474aa56b58e7cd33859, type: 3}
+  Contador: {fileID: 3336703085262100488, guid: 6b4d3a7e06ab86e44a6069ec20db0966, type: 3}
   pedido: 0
   cocinas:
   - {fileID: 0}

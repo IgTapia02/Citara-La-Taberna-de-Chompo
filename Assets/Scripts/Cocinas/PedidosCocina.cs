@@ -18,6 +18,7 @@ public class PedidosCocina : MonoBehaviour
     Sprite tortilla;
     [SerializeField]
     Sprite temporizador;
+    Animator my_Animator;
 
     [SerializeField]
     float tiempoPreparar;
@@ -38,13 +39,17 @@ public class PedidosCocina : MonoBehaviour
         cocina = FindObjectOfType<Cocina2>();
 
         pedido = cocina.pedido;
-        spriterender.sprite = temporizador;
+        //temporizador antiguo
+                //spriterender.sprite = temporizador;
+        my_Animator = gameObject.GetComponent<Animator>();
+        my_Animator.speed = tiempoPreparar;  //iguaslar tiermpo de pedido a la speed del animator=1   (1*x=tiempopedido) animación adaptativa al inicializar con el valor predefinido
 
     }
     void Update()
     {
         if (time >= tiempoPreparar)
         {
+            
             listo = true;
             Debug.Log(listo);
         }
