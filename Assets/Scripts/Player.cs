@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     public KeyCode coger;
     public KeyCode dejar;
 
+    Animator MyAnimation;
 
     public int[] Comandas = new int[3];
     public int numcomandas;
@@ -18,13 +19,15 @@ public class Player : MonoBehaviour
     void Start()
     {
         numcomandas = 0;
+        MyAnimation=GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical")) * speed;
-
+        MyAnimation.SetFloat("horizontal",Input.GetAxisRaw("Vertical"));
+        MyAnimation.SetFloat("vertical", Input.GetAxisRaw("Horizontal"));
     }
 
     public void Apuntar(int comanda)
