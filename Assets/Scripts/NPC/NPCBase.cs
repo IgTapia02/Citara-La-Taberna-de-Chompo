@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NPCBase : MonoBehaviour
 {
-    Transform target;
+    public Transform target;
 
     [Header("Velocidad NPC")]
     [SerializeField]
@@ -37,9 +37,10 @@ public class NPCBase : MonoBehaviour
     [Header("Pedido que realiza")]
     public int pedido;
 
+    Rigidbody rb;
     bool existcolider;
     bool exclamacion;
-    int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
+    public int state; // 0- entrando, 1- sentado esperando, 2-pidiendo, 3- esperando pedido,4- tomandopedido, 5- saliendo
     float tiempo;
     Player player;
     GameManager pagar;
@@ -58,13 +59,15 @@ public class NPCBase : MonoBehaviour
         exclamacion = false;
         tiempo = 0f;
         state = 0;
-        speed = 5;
+        speed = 3;
         chair1 = GameObject.Find("Chair (1)");
         chair2 = GameObject.Find("Chair (2)");
         chair3 = GameObject.Find("Chair (3)");
         chair4 = GameObject.Find("Chair (4)");
         target = manager.GetComponent<NPCManager>().target;
         MyAnimation = GetComponent<Animator>();
+        MyAnimation.Play("NPC1De");
+        rb = GetComponent<Rigidbody>();
 
     }
 
@@ -72,7 +75,8 @@ public class NPCBase : MonoBehaviour
     {
         if (state == 0)
         {
-            Move(); 
+            Move();
+            //transform.rotation = new Quaternion(0f, 0.7071f, 0f, 0.7071f);
         }
         if(state == 1)
         {
@@ -86,6 +90,7 @@ public class NPCBase : MonoBehaviour
                 tiempo = 0;
                 state = 5;
                 Destroy(thisComida);
+                Destroy(thisColider);
             }
         }
         if(state == 2)
@@ -120,23 +125,26 @@ public class NPCBase : MonoBehaviour
         }
         if (state == 5)
         {
+            MyAnimation.Play("NPC1Frente");
             Move();
         }
-        MyAnimation.SetFloat("horizontal", Input.GetAxisRaw("Vertical"));
-        MyAnimation.SetFloat("vertical", Input.GetAxisRaw("Horizontal"));
+       
     }
 
     void Move()
     {
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
+
+        //transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
     }
     void Sentado()
     {
         if(exclamacion == false)
         {
             thisComida = Instantiate(comida, transform);
-            comida.transform.position = new Vector3(-0.41f, 1.07f, 0.13f);
+            comida.transform.position = new Vector3(-0.21f, 1.07f, 0.67f);
             exclamacion = true;
         }
         if(tiempo >= (antesPedir/2))
@@ -150,7 +158,7 @@ public class NPCBase : MonoBehaviour
         if (existcolider == false)
         {
             thisColider = Instantiate(colider, transform);
-            colider.transform.position = new Vector3(-3f, 0, 0);
+            colider.transform.position = new Vector3(0, 0, 3f);
             existcolider = true;
             
         }
@@ -169,7 +177,7 @@ public class NPCBase : MonoBehaviour
         if (existcolider == false)
         {
             thisColider = Instantiate(colider, transform);
-            colider.transform.position = new Vector3(-3f, 0, 0);
+            colider.transform.position = new Vector3(0, 0, 3f);
             existcolider = true;
         }
 
@@ -210,6 +218,7 @@ public class NPCBase : MonoBehaviour
             if(state == 0)
             {
                 target = other.gameObject.GetComponent<WayPoints>().point;
+                Debug.Log(target);
             }
             if(state == 5)
             {
@@ -221,12 +230,15 @@ public class NPCBase : MonoBehaviour
         {
             if(state == 5)
             {
+                Debug.Log("hola");
+                MyAnimation.Play("NPC1Iz");
                 target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
                 ownchair.GetComponent<Chair>().fill = false;
             }
             if(state == 0)
             {
-                if(chair1.GetComponent<Chair>().fill == false)
+                MyAnimation.Play("NPC1atr");
+                if (chair1.GetComponent<Chair>().fill == false)
                 {
                     chair1.GetComponent<Chair>().fill = true;
                     target = other.gameObject.GetComponent<ChairManager>().chair1;
@@ -252,6 +264,7 @@ public class NPCBase : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("primero");
                     state =  5;
                     target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
                 }
@@ -260,10 +273,12 @@ public class NPCBase : MonoBehaviour
         }
         if(other.CompareTag("Chair"))
         {
-            if(state == 0)
+            MyAnimation.Play("Idlefrente");
+            if (state == 0)
             {
+                Debug.Log("hola");
                 target = other.gameObject.GetComponent<Chair>().exitpoint;
-                transform.rotation = new Quaternion(0, 90, 0, 0);
+                transform.rotation = new Quaternion(0f, 0.7071f, 0f, 0.7071f);
                 state = 1;
             }
         }

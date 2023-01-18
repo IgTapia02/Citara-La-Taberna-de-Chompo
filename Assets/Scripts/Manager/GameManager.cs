@@ -27,8 +27,6 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        
-        Debug.Log(gameData.dineroPJ);
     }
 
     public void NewGame()
