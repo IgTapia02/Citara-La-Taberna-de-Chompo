@@ -12,28 +12,40 @@ public class MenuPausa : MonoBehaviour
     [SerializeField]
     GameObject PauseMenu;
 
-    GameObject manager;
+    [SerializeField]
+    GameObject ImageTutorial;
 
     bool pause=false;
-
-    GameManager gameManager;
+    bool fin;
+    GameManager manager;
 
     void Start()
     {
-        manager = GameObject.Find("GameManager");
-        Time.timeScale = 1f;
-        gameManager = FindObjectOfType<GameManager>();
+        manager = FindObjectOfType<GameManager>();
+        if (manager.gameData.dia == 1)
+        {
+            Time.timeScale = 0f;
+            ImageTutorial.SetActive(true);
+            UI.SetActive(false);
+            fin = false;
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
+ 
+        
        
     }
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            if(pause == false)
+            if (Input.GetKey(KeyCode.Escape))
             {
-                Pausa();
+                if (pause == false)
+                {
+                    Pausa();
+                }
             }
-        }
     }
 
     public void MainMenu()
@@ -56,6 +68,14 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         UI.SetActive(true);
         PauseMenu.SetActive(false);
+    }
+
+    public void FinTutorial()
+    {
+        UI.SetActive(true);
+        ImageTutorial.SetActive(false);
+        Time.timeScale = 1f;
+        fin = true;
     }
 
 }

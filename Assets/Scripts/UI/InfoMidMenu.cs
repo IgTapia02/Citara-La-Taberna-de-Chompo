@@ -17,7 +17,14 @@ public class InfoMidMenu : MonoBehaviour
 
     private void Update()
     {
-        sumDinero.text = gameManager.dinMidDia+ "$";
+        if(gameManager.findemo==true)
+        {
+            sumDinero.text = "Has terminado la Demo con: " + gameManager.gameData.dineroPJ + "$";
+        }else
+        {
+            sumDinero.text = gameManager.dinMidDia + "$";
+        }
+        
     }
 
     public IEnumerator Esperar()

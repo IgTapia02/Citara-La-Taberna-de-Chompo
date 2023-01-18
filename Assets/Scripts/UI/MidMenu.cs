@@ -23,17 +23,31 @@ public class MidMenu : MonoBehaviour
     {
      if(Input.GetKeyDown(KeyCode.Space))
         {
-            if(cont == 0)
+            if (gameManager.findemo == true)
             {
+                if (cont == 0)
+                {
+                    cont++;
+                }
+                else if (cont == 1)
+                {
+                    gameManager.NewGame();
+                }
+            }
+            else
+            {
+                if (cont == 0)
+                {
                     StartCoroutine(midMenu.Esperar());
                     cont++;
 
-            }
-            else if (cont == 1)
-            {
+                }
+                else if (cont == 1)
+                {
 
-                gameManager.dineroDia = 0;
-                SceneManager.LoadScene("MainRestaurant");
+                    gameManager.dineroDia = 0;
+                    SceneManager.LoadScene("MainRestaurant");
+                }
             }
         }
     }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
 
     public GameData gameData;
 
+    public bool findemo = false;
+
 
     void Start()
     {
@@ -31,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        findemo = false;
         gameData.dineroPJ = 0;
         gameData.dia = 1;
         gameData.semana = 1;
@@ -42,6 +45,7 @@ public class GameManager : MonoBehaviour
         gameData.dia++;
         if(gameData.dia>6)
         {
+            findemo = true;
             gameData.semana++;
             gameData.dia = 1;
             gameData.dineroPJ -= pagoMes;
