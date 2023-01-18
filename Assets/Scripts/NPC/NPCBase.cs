@@ -32,6 +32,7 @@ public class NPCBase : MonoBehaviour
 
     [SerializeField]
     float comiendo;
+    Animator MyAnimation;
 
     [Header("Pedido que realiza")]
     public int pedido;
@@ -63,6 +64,8 @@ public class NPCBase : MonoBehaviour
         chair3 = GameObject.Find("Chair (3)");
         chair4 = GameObject.Find("Chair (4)");
         target = manager.GetComponent<NPCManager>().target;
+        MyAnimation = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -119,6 +122,8 @@ public class NPCBase : MonoBehaviour
         {
             Move();
         }
+        MyAnimation.SetFloat("horizontal", Input.GetAxisRaw("Vertical"));
+        MyAnimation.SetFloat("vertical", Input.GetAxisRaw("Horizontal"));
     }
 
     void Move()

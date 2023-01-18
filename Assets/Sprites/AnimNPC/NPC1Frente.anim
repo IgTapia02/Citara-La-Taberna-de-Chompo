@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Frente
+  m_Name: NPC1Frente
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -23,11 +23,11 @@ AnimationClip:
       value: {fileID: 21300000, guid: 77b4b288965f65b479f10326ab48490c, type: 3}
     - time: 0.083333336
       value: {fileID: 21300000, guid: 9be12df379c6fcb40ba8b2808449f858, type: 3}
-    - time: 0.16666667
+    - time: 0.18333334
       value: {fileID: 21300000, guid: 49df57dd06cf313438c272f9753286b6, type: 3}
-    - time: 0.25
+    - time: 0.26666668
       value: {fileID: 21300000, guid: d309481d29b6fb44fa20dbfff603b418, type: 3}
-    - time: 0.35
+    - time: 0.36666667
       value: {fileID: 21300000, guid: 3cad04362cddadf42a7f3e59ab13f90a, type: 3}
     - time: 0.45
       value: {fileID: 21300000, guid: a6351c9066540ba468d00da2c971fe03, type: 3}
@@ -35,11 +35,11 @@ AnimationClip:
       value: {fileID: 21300000, guid: c1d898d9f4356ad4ba135733c868fdce, type: 3}
     - time: 0.6333333
       value: {fileID: 21300000, guid: 21654576ab4651946838a7d38ac98f91, type: 3}
-    - time: 0.75
+    - time: 0.73333335
       value: {fileID: 21300000, guid: cade088d11761804cb316ef095273151, type: 3}
-    - time: 0.8333333
+    - time: 0.81666666
       value: {fileID: 21300000, guid: 7d2aa1af07f67ae43bbf0ab79a96f370, type: 3}
-    - time: 0.8833333
+    - time: 0.9166667
       value: {fileID: 21300000, guid: 176f7394aa015114d854b0480ba8fc88, type: 3}
     - time: 1
       value: {fileID: 21300000, guid: d0d213a3f0162f04792a7d258a3938da, type: 3}
