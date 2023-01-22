@@ -1,9 +1,12 @@
-using System.Collections;
+
+//este fue un primer script para cambiar los sprites de pedido antes de hacerlo con el animator
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PedidosCocina : MonoBehaviour
-{
+{ 
+    //desde el motor se colocan los sprites que representa cada pedido de la cocina
     SpriteRenderer spriterender;
     [Header("----------Sprites----------")]
     [SerializeField]
@@ -39,10 +42,8 @@ public class PedidosCocina : MonoBehaviour
         cocina = FindObjectOfType<Cocina2>();
 
         pedido = cocina.pedido;
-        //temporizador antiguo
-                //spriterender.sprite = temporizador;
         my_Animator = gameObject.GetComponent<Animator>();
-        my_Animator.speed = tiempoPreparar;  //iguaslar tiermpo de pedido a la speed del animator=1   (1*x=tiempopedido) animación adaptativa al inicializar con el valor predefinido
+        my_Animator.speed = tiempoPreparar;  //igualar tiempo de pedido a la speed del animator=1   (1*x=tiempopedido) animación adaptativa al inicializar con el valor predefinido
 
     }
     void Update()
@@ -82,4 +83,4 @@ public class PedidosCocina : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-}
+}*/

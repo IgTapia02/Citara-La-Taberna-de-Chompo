@@ -1,3 +1,6 @@
+
+//Esta codigo fue un primer intento de hacer la cocina, no lo pense demasiado y le di mil vueltas asique lo acabe desechando y haciendolo otra vez en el script cocina2
+
 /*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

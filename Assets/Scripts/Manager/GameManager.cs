@@ -4,12 +4,12 @@ using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using UnityEngine.SceneManagement;
-[System.Serializable]
+[System.Serializable] // esto ahce que este script pueda ser serializable para asi guardarlo en un archivo
 
 public class GameManager : MonoBehaviour
 {
     [Header("Precios comida")]
-    [SerializeField]
+    [SerializeField]// aqui se indican los precios de la comida que se colocan desde motor
     int zumos,comidas,pagoMes;
 
     public int dineroDia;
@@ -25,12 +25,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //esto es para que en los cambios de escena no se destruya el game object y se mantengan las variables
         DontDestroyOnLoad(this.gameObject);
     }
-    private void Update()
-    {
-    }
-
+    //se crea un nuevo juego poniendo todas las variables de dinero y dias a sus valores iniciales
     public void NewGame()
     {
         findemo = false;
@@ -39,7 +37,7 @@ public class GameManager : MonoBehaviour
         gameData.semana = 1;
         SceneManager.LoadScene(primerRestaurante);
     }
-
+    //se termina el dia y se suma uno mas a la variable de dia
     public void CambioDia()
     {
         gameData.dia++;
@@ -52,7 +50,8 @@ public class GameManager : MonoBehaviour
         }
         SceneManager.LoadScene("ResumeMenu");
     }
-
+    //se suma el dinero correspondiente a el dinero total (dineroPJ) y al dinerodia si el pedido es 1 se suma
+    //el precio del zumo si es otro se suma el dinero de la comida
     public void Pagar(int pedido)
     {
         if(pedido == 1)
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
             gameData.dineroPJ += comidas;
         }
     }
-    
+    //aqui se guarda la partida esto se ejecuta cada fin de dia
     public void Save()
     {
         data = new GameData();

@@ -13,6 +13,9 @@ public class MaquinaZumos : MonoBehaviour
     }
     void Update()
     {
+        //la maquina de zumos funciona exactamente igual que la cocina pero solo que aqui en vez de crear un ojeto aparte directamente
+        //si se detecta que en uno de los tres ints del array comandas existe un uno se llama el player.coger para coger un objeto zumo (que es el 1)
+        //elimina este por un cero y se recoloca el array
         if (colision == true)
         {
             if (player.Inventario[0] == 0)

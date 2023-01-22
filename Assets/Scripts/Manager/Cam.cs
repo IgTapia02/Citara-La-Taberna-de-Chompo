@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cam : MonoBehaviour
 {
+    //variables que establecen los puntos donde la camara se queda estable
     [SerializeField]
     float izqMax , derMax;
     [SerializeField]
@@ -13,6 +14,7 @@ public class Cam : MonoBehaviour
 
     void Update()
     {
+        //si el player sobrepasa las posiciones fijadas desde el motor la camara se quedara estatica
         if (player.position.x < arribaMax && player.position.x > abajoMax)
         {
             transform.position = new Vector3((player.position.x - 6), transform.position.y, transform.position.z);

@@ -29,7 +29,7 @@ public class PedidosAnim : MonoBehaviour
         //temporizador antiguo
         //spriterender.sprite = temporizador;
         my_Animator = gameObject.GetComponent<Animator>();
-        my_Animator.speed = 1/tiempoPreparar;  //iguaslar tiermpo de pedido a la speed del animator=1   (1*x=tiempopedido) animación adaptativa al inicializar con el valor predefinido
+        my_Animator.speed = 1/tiempoPreparar;  //igualar tiempo de pedido a la speed del animator=1   (1*x=tiempopedido) animación adaptativa al inicializar con el valor predefinido
         my_Animator.SetFloat("controladorTempo", 1);
     }
     void Update()
@@ -37,10 +37,9 @@ public class PedidosAnim : MonoBehaviour
         if (time >= tiempoPreparar)
         {
             listo = true;
-            Debug.Log(listo);
         }
         else { time += Time.deltaTime; }
-
+        //se activan las animaciones a medida que el objeto contador este en una fase u otra
         if (listo == true)
         {
             my_Animator.SetFloat("controladorTempo",pedido);
