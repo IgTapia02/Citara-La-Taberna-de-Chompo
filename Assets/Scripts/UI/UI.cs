@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using TMPro; //libreria de texto que utiliza el unity 3d
 
 public class UI : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
     public TMP_Text Dia;
 
     GameManager manager;
+    //escribir por pantalla el dinero de ese dia y el dia en el que estamos
     void Start()
     {
         manager = FindObjectOfType<GameManager>();

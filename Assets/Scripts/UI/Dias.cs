@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Dias : MonoBehaviour
 {
+    //este script se puede sustituir por animaciones por lo que mas adelante se hara
+    //este script simplemente funciona con el numero de game.data.dia cambiando el sprite en funcion de esta variable
     GameManager game;
     [SerializeField]
     Sprite dia1;
@@ -28,7 +30,7 @@ public class Dias : MonoBehaviour
         game = FindObjectOfType<GameManager>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         

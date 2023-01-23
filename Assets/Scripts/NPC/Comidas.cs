@@ -24,7 +24,7 @@ public class Comidas : MonoBehaviour
     [SerializeField]
     Sprite zumo;
     [SerializeField]
-    Sprite tortilla;
+    Sprite tortilla;//sprites de todas las comidas, de la exclamacion cuando esta esperando y la animacion cuando come el npc
     [SerializeField]
     Sprite Esperando1;
     [SerializeField]
@@ -38,22 +38,20 @@ public class Comidas : MonoBehaviour
 
     void Start()
     {
-        spriterender = GetComponent<SpriteRenderer>();
+        spriterender = GetComponent<SpriteRenderer>();//se inicializa el sprite render
         atendido = false;
         mitadTiempo = false;
         comiendo = false;
-        numcomiendo = 1;
+        numcomiendo = 1;//variable para cambiar la animacion cuando come
 
     }
     void Update()
     {
-        Debug.Log(numcomiendo);
-        Debug.Log(tiempo);
         if (numcomiendo == 0)
         {
             numcomiendo = 1;
         }
-
+        //cambio de sprites para la animacion de comer
         if (comiendo == true)
         {
             tiempo += Time.deltaTime;
@@ -90,6 +88,7 @@ public class Comidas : MonoBehaviour
         }
         else
         {
+            //se pone el pedido que se selecciono en el npc
             if (atendido == true)
             {
                 switch (pedido)
@@ -114,6 +113,7 @@ public class Comidas : MonoBehaviour
                         break;
                 }
             }
+            //animacion de antes de pedir con las exclamaciones
             else
             {
                 if (mitadTiempo == true)
@@ -128,6 +128,7 @@ public class Comidas : MonoBehaviour
         }
     }
 
+    //se pasa el pedido del npc al pedido de este script
     public int EstablecerPedido(int pedidoNPC)
     {
         pedido = pedidoNPC;

@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class UIcomida : MonoBehaviour
 {
+    //este script se puede sustituir por animaciones por lo que mas adelante se hara
+    //este script simplemente funciona con los numeros de player.pedido y player.comandas cambiando los sprites en funcion de estas variables
     Player player;
-    SpriteRenderer spriterender;
     [Header("----------Sprites----------")]
     [SerializeField]
     Sprite hamburgesa;

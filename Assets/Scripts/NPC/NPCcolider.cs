@@ -10,12 +10,13 @@ public class NPCcolider : MonoBehaviour
     GameObject Player;
     void Start()
     {
-        Player = GameObject.Find("Player");
-        atendido1 = false;
-        atendido2 = false;
+        Player = GameObject.Find("Player");//se inicializa el player par las variables coger y dejar
+        atendido1 = false;//variable de atendido antes de pedir
+        atendido2 = false;//variable de atendido antes de comer
     }
     void Update()
     {
+        //se detecta si el player esta colisionando con este colider
         if (colision == true)
         {
             if (Input.GetKeyDown((Player.GetComponent<Player>().coger)))

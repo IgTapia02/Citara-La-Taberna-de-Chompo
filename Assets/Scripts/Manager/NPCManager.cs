@@ -25,8 +25,8 @@ public class NPCManager : MonoBehaviour
     [Header("Dia3")]
     [SerializeField]
     int dia3;
-    [SerializeField]
-    float timeMax3;
+    [SerializeField]//cada dia de la semana se tiene que ciolocar asi porque el numero de clientes hay que colocarlo a mano0 desde el motor 
+    float timeMax3; //dia es el numero de clientes que entra timemax y timemin es el intervalo de tiempo que tarda los clientes en entrar despues de que entre otro
     [SerializeField]
     float timeMin3;
     [Header("Dia4")]
@@ -55,12 +55,6 @@ public class NPCManager : MonoBehaviour
     float timeMax;
     float timeMin;
 
-
-   
-
-
-
-
     int npcNum;
     float tiempo;
     
@@ -77,6 +71,9 @@ public class NPCManager : MonoBehaviour
     {
         npcgen = 0;
         gameManager = FindObjectOfType<GameManager>();
+        //se hace un switch con el dia actual gamedata.dia para decidir cuantos npc saldran ese dia
+        //tengo que cambiar esto de los dias puesto que tengo que añadir las semanas asique lo que hare es cambiarlo todo por un array
+        //de dos variables int fecha[] = new int [semanas][dias] por cada semana hay seis dias, de esta forma seria mucho mas reescalable
         switch (gameManager.gameData.dia)
         {
             case 1:
@@ -110,10 +107,12 @@ public class NPCManager : MonoBehaviour
                 timeMin = timeMin6;
                 break;
         }
-        numsalida = 10f;
+        numsalida = 10f;//un valor inicial para el spawn del primer cliente
     }
     void Update()
     {
+        //un contador simpleen el que cada vez que se genere un npc se cambai el tiempo que tarda en salir, numsalida, con un numero aleatorio entre timemin y timemax
+        //en cuanto se creen todos los npc indicados se cambia de dia(gamemanager.cambiodia)
             tiempo += Time.deltaTime;
             if (tiempo > numsalida)
             {

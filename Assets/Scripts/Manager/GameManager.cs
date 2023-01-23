@@ -65,7 +65,8 @@ public class GameManager : MonoBehaviour
             gameData.dineroPJ += comidas;
         }
     }
-    //aqui se guarda la partida esto se ejecuta cada fin de dia
+    //aqui se guarda la partida esto se ejecuta cada fin de dia para esto se ha creado una clase game data con las variables que se quieren
+    //guardar despues estas se pasan a codigo bianrio que se guarda en una carpeta que creamos(file.create) se serializa y se cierra el archivo
     public void Save()
     {
         data = new GameData();
@@ -78,6 +79,8 @@ public class GameManager : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
     }
+    //para cargar partida se hace lo mismo que para guardar pero a la inversa, si existe un archivo de gusrdado, se abre
+    //y se deseializa para que unity pueda leer las variables, estas se igualan a el game data actual y se carga la escena del restaurante
     public void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
@@ -90,12 +93,13 @@ public class GameManager : MonoBehaviour
             file.Close();
         }
     }
+    //con esto se cierra el juego
     public void Salir()
     {
         Application.Quit();
     }
 }
-
+//una clase creada para guardar las variables que se quieran serializar para guardar partida
 [System.Serializable]
 public class GameData
 {

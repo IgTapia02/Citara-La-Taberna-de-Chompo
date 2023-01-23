@@ -7,7 +7,7 @@ public class MenuPausa : MonoBehaviour
 {
 
     [SerializeField]
-    public GameObject UI;
+    GameObject UI;
 
     [SerializeField]
     GameObject PauseMenu;
@@ -16,29 +16,26 @@ public class MenuPausa : MonoBehaviour
     GameObject ImageTutorial;
 
     bool pause=false;
-    bool fin;
     GameManager manager;
 
     void Start()
     {
         manager = FindObjectOfType<GameManager>();
+        //si el dia es igual a 1 se activan las imagenes del tutorial
         if (manager.gameData.dia == 1)
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f;//esto para el juego
             ImageTutorial.SetActive(true);
-            UI.SetActive(false);
-            fin = false;
+            UI.SetActive(false);//se oculta la ui y se muestran las imagenes del tutorial
         }
         else
         {
-            Time.timeScale = 1f;
+            Time.timeScale = 1f;//esto vuelve a ponerlo en tiempo normal
         }
- 
-        
-       
     }
     void Update()
     {
+        //se pulsa el escape y si el menu no esta activo este llama a pausa
             if (Input.GetKey(KeyCode.Escape))
             {
                 if (pause == false)
@@ -48,12 +45,13 @@ public class MenuPausa : MonoBehaviour
             }
     }
 
+    //funcion que hace que el juego pase al menu principal, se destruye el game manager puesto que en este se crea otro
     public void MainMenu()
     {
         Destroy(manager);
         SceneManager.LoadScene("MainMenu");
     }
-
+    //se pone a true el pausa, se para el juego se quita el canvas de la ui y se activa el canvas de menu
     public void Pausa()
     {
         pause = true;
@@ -61,7 +59,7 @@ public class MenuPausa : MonoBehaviour
         UI.SetActive(false);
         PauseMenu.SetActive(true);
     }
-
+    //hace lo contrario que el pausa()
     public void Resume()
     {
         pause = false;
@@ -69,13 +67,12 @@ public class MenuPausa : MonoBehaviour
         UI.SetActive(true);
         PauseMenu.SetActive(false);
     }
-
+    //funcion que se ejecuta cuando se termina el tutorial 
     public void FinTutorial()
     {
         UI.SetActive(true);
         ImageTutorial.SetActive(false);
         Time.timeScale = 1f;
-        fin = true;
     }
 
 }
