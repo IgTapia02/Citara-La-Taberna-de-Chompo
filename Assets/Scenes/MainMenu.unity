@@ -365,6 +365,7 @@ MonoBehaviour:
     dineroPJ: 0
     dia: 0
     semana: 0
+  findemo: 0
 --- !u!4 &395625831
 Transform:
   m_ObjectHideFlags: 0
