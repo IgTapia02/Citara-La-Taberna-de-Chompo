@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     public int dineroDia;
     public int dinMidDia;
 
-    string primerRestaurante = "Resttaurante_001Final";
+    string primerRestaurante = "MainRestaurant";
     public GameData data;
 
     public GameData gameData;

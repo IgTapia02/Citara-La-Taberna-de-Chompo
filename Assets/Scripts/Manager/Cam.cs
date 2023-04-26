@@ -17,7 +17,7 @@ public class Cam : MonoBehaviour
         //si el player sobrepasa las posiciones fijadas desde el motor la camara se quedara estatica
         if (player.position.x < arribaMax && player.position.x > abajoMax)
         {
-            transform.position = new Vector3((player.position.x - 6), transform.position.y, transform.position.z);
+            transform.position = new Vector3((player.position.x -14), transform.position.y, transform.position.z);//cambiar segun restaurante
         }
 
         if (player.position.z < izqMax && player.position.z > derMax)

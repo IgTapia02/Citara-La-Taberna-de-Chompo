@@ -11,7 +11,8 @@ public class MenuPausa : MonoBehaviour
 
     [SerializeField]
     GameObject PauseMenu;
-
+    [SerializeField]
+    GameObject OptionsMenu;
     [SerializeField]
     GameObject ImageTutorial;
 
@@ -66,6 +67,16 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1f;
         UI.SetActive(true);
         PauseMenu.SetActive(false);
+    }
+    public void Options()
+    {
+        OptionsMenu.SetActive(true);
+        PauseMenu.SetActive(false);
+    }
+    public void GoMenu()
+    {
+        OptionsMenu.SetActive(false);
+        PauseMenu.SetActive(true);
     }
     //funcion que se ejecuta cuando se termina el tutorial 
     public void FinTutorial()
