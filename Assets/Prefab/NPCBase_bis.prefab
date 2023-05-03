@@ -185,7 +185,7 @@ MonoBehaviour:
   chair4: {fileID: 0}
   antesPedir: 10
   despuesPedir: 18
-  comiendo: 4
+  comiendo: 3
   pedido: 0
   state: 0
 --- !u!95 &1714325937731249507
