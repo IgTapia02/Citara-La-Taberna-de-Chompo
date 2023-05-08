@@ -79,15 +79,15 @@ public class Cocina2 : MonoBehaviour
                         //despues de cada accion de colocar objetos se recolocan en el mundo los contadores para que siempre esten ordenados
                         if (ncocina == 1)
                         {
-                            cocinas[0].transform.position = new Vector3(8.73f, 4.19f, 1.26f);
+                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
                         }
                         else if (ncocina == 2)
                         {
-                            cocinas[1].transform.position = new Vector3(8.73f, 4.19f, 0.24f);
+                            cocinas[1].transform.position = new Vector3(8.73f, 3.5f, -0.87f);
                         }
                         else if (ncocina == 3)
                         {
-                            cocinas[2].transform.position = new Vector3(8.73f, 4.19f, -0.94f);
+                            cocinas[2].transform.position = new Vector3(8.73f, 3.5f, -2.63f);
                         }
 
 
@@ -118,7 +118,7 @@ public class Cocina2 : MonoBehaviour
                             cocinas[0] = cocinas[1];
                             cocinas[1] = vacio;
 
-                            cocinas[0].transform.position = new Vector3(8.73f, 4.19f, 1.26f);
+                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
 
                         }
                         else if(ncocina == 3)
@@ -129,8 +129,8 @@ public class Cocina2 : MonoBehaviour
                             cocinas[2] = vacio;
                             
 
-                            cocinas[0].transform.position = new Vector3(8.73f, 4.19f, 1.26f);
-                            cocinas[1].transform.position = new Vector3(8.73f, 4.19f, 0.24f);
+                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
+                            cocinas[1].transform.position = new Vector3(8.73f, 3.5f, -0.87f);
                         }
                         ncocina--;
                     }

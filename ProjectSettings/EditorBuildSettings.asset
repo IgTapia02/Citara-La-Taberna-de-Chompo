@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ResumeMenu.unity
     guid: bb4f02212a380634cb884216a17e6f85
+  - enabled: 1
+    path: Assets/Scenes/Resttaurante_001Final.unity
+    guid: 8b6d979732b4145409f5c9433017be48
   m_configObjects: {}
