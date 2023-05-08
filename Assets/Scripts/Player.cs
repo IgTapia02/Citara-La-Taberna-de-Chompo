@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(Input.GetAxis("Horizontal"),0, Input.GetAxis("Vertical")) * speed;
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
         MyAnimation.SetFloat("horizontal",Input.GetAxisRaw("Vertical"));
         MyAnimation.SetFloat("vertical", Input.GetAxisRaw("Horizontal"));
     }
