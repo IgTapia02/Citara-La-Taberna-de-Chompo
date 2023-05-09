@@ -136,19 +136,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 5572999992634431308}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 370, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -472519419774074647}
-    m_Position: {x: 235, y: 65, z: 0}
+    m_Position: {x: 410, y: 10, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2324116964468085239}
-    m_Position: {x: 270, y: 130, z: 0}
+    m_Position: {x: 530, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8322362049246067137}
-    m_Position: {x: 305, y: 195, z: 0}
+    m_Position: {x: 570, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4661921084367114557}
-    m_Position: {x: 160, y: 120, z: 0}
+    m_Position: {x: 200, y: 90, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4951361173034633536}
     m_Position: {x: 195, y: 185, z: 0}
@@ -208,13 +208,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: velx
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
