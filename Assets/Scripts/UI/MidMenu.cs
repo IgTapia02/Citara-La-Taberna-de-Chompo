@@ -17,6 +17,10 @@ public class MidMenu : MonoBehaviour
         midMenu = FindObjectOfType<InfoMidMenu>();
         gameManager.Save();//se guarda la partida cada vez que se pasa al menu de entre dias
     }
+    void ComprarRestaurante()
+    {
+
+    }
     void Update()
     {
         //con la tecla espacio se activan las interacciones con el midmenu, primero sumar el dinero luego se vuelve al restaurante
@@ -47,7 +51,7 @@ public class MidMenu : MonoBehaviour
                 {
 
                     gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                    SceneManager.LoadScene("MainRestaurant");//se vuelve al restaurante
+                    SceneManager.LoadScene("Resttaurante_001Final");//se vuelve al restaurante
                 }
             }
         }
