@@ -66,7 +66,7 @@ public class NPCBase : MonoBehaviour
         target = manager.GetComponent<NPCManager>().target;// target sera el siguiente waypoint al que se movera el npc
         MyAnimation = GetComponent<Animator>();//se inicia el animator
         //las animaciones no estan puestas porque nos dio errores con el movimiento de waypoints
-        MyAnimation.Play("NPC1De");
+        //MyAnimation.Play("NPC1De");
 
     }
 
@@ -138,7 +138,8 @@ public class NPCBase : MonoBehaviour
         //el movimiento se basa en que el npc mira hacia una direccion con su eje z y despues se le aplica una fuerza en este eje que lo mueve hasta colisionar con otro waypoint
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
-
+        MyAnimation.SetFloat("velx", this.speed);
+        MyAnimation.SetFloat("vely", target.position.y);
         //transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
     }
