@@ -43,9 +43,10 @@ public class GameManager : MonoBehaviour
         gameData.dia++;
         if(gameData.dia>6)
         {
-            findemo = true;
+            //findemo = true;
             gameData.semana++;
             gameData.dia = 1;
+            gameData.semana++;
             gameData.dineroPJ -= pagoMes;
         }
         SceneManager.LoadScene("ResumeMenu");
@@ -104,6 +105,6 @@ public class GameManager : MonoBehaviour
 public class GameData
 {
     public int dineroPJ;
-    public int dia, semana;
+    public int dia, semana = 1;
 
 }

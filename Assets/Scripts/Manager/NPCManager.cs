@@ -8,6 +8,10 @@ public class NPCManager : MonoBehaviour
     [SerializeField]
     GameObject NPC;
 
+    [SerializeField] int[] NpcDias = new int[18];
+    [SerializeField] int[] TimeMax = new int[18];
+    [SerializeField] int[] TimeMin = new int[18];
+
     [Header("Dia1")]
     [SerializeField]
     int dia1;
@@ -74,38 +78,111 @@ public class NPCManager : MonoBehaviour
         //se hace un switch con el dia actual gamedata.dia para decidir cuantos npc saldran ese dia
         //tengo que cambiar esto de los dias puesto que tengo que añadir las semanas asique lo que hare es cambiarlo todo por un array
         //de dos variables int fecha[] = new int [semanas][dias] por cada semana hay seis dias, de esta forma seria mucho mas reescalable
-        switch (gameManager.gameData.dia)
+        if (gameManager.gameData.semana == 1)
         {
-            case 1:
-                npcNum = dia1;
-                timeMax = timeMax1;
-                timeMin = timeMin1;
-                break;
-            case 2:
-                npcNum = dia2;
-                timeMax = timeMax2;
-                timeMin = timeMin2;
-                break;
-            case 3:
-                npcNum = dia3;
-                timeMax = timeMax3;
-                timeMin = timeMin3;
-                break;
-            case 4:
-                npcNum = dia4;
-                timeMax = timeMax4;
-                timeMin = timeMin4;
-                break;
-            case 5:
-                npcNum = dia5;
-                timeMax = timeMax5;
-                timeMin = timeMin5;
-                break;
-            case 6:
-                npcNum = dia6;
-                timeMax = timeMax6;
-                timeMin = timeMin6;
-                break;
+            switch (gameManager.gameData.dia)
+            {
+                case 1:
+                    npcNum = NpcDias[0];
+                    timeMax = timeMax1;
+                    timeMin = timeMin1;
+                    break;
+                case 2:
+                    npcNum = NpcDias[1];
+                    timeMax = timeMax2;
+                    timeMin = timeMin2;
+                    break;
+                case 3:
+                    npcNum = NpcDias[2];
+                    timeMax = timeMax3;
+                    timeMin = timeMin3;
+                    break;
+                case 4:
+                    npcNum = NpcDias[3];
+                    timeMax = timeMax4;
+                    timeMin = timeMin4;
+                    break;
+                case 5:
+                    npcNum = NpcDias[4];
+                    timeMax = timeMax5;
+                    timeMin = timeMin5;
+                    break;
+                case 6:
+                    npcNum = NpcDias[5];
+                    timeMax = timeMax6;
+                    timeMin = timeMin6;
+                    break;
+            }
+        }else if (gameManager.gameData.semana == 1)
+        {
+            switch (gameManager.gameData.dia)
+            {
+                case 1:
+                    npcNum = dia1;
+                    timeMax = timeMax1;
+                    timeMin = timeMin1;
+                    break;
+                case 2:
+                    npcNum = dia2;
+                    timeMax = timeMax2;
+                    timeMin = timeMin2;
+                    break;
+                case 3:
+                    npcNum = dia3;
+                    timeMax = timeMax3;
+                    timeMin = timeMin3;
+                    break;
+                case 4:
+                    npcNum = dia4;
+                    timeMax = timeMax4;
+                    timeMin = timeMin4;
+                    break;
+                case 5:
+                    npcNum = dia5;
+                    timeMax = timeMax5;
+                    timeMin = timeMin5;
+                    break;
+                case 6:
+                    npcNum = dia6;
+                    timeMax = timeMax6;
+                    timeMin = timeMin6;
+                    break;
+            }
+        }else if (gameManager.gameData.semana == 1)
+        {
+            switch (gameManager.gameData.dia)
+            {
+                case 1:
+                    npcNum = dia1;
+                    timeMax = timeMax1;
+                    timeMin = timeMin1;
+                    break;
+                case 2:
+                    npcNum = dia2;
+                    timeMax = timeMax2;
+                    timeMin = timeMin2;
+                    break;
+                case 3:
+                    npcNum = dia3;
+                    timeMax = timeMax3;
+                    timeMin = timeMin3;
+                    break;
+                case 4:
+                    npcNum = dia4;
+                    timeMax = timeMax4;
+                    timeMin = timeMin4;
+                    break;
+                case 5:
+                    npcNum = dia5;
+                    timeMax = timeMax5;
+                    timeMin = timeMin5;
+                    break;
+                case 6:
+                    npcNum = dia6;
+                    timeMax = timeMax6;
+                    timeMin = timeMin6;
+                    break;
+            }
         }
         numsalida = 10f;//un valor inicial para el spawn del primer cliente
     }
