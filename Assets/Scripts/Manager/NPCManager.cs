@@ -5,55 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class NPCManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject NPC;
+    [SerializeField] GameObject[] NPC = new GameObject[3];
 
     [SerializeField] int[] NpcDias = new int[18];
     [SerializeField] int[] TimeMax = new int[18];
     [SerializeField] int[] TimeMin = new int[18];
-
-    [Header("Dia1")]
-    [SerializeField]
-    int dia1;
-    [SerializeField]
-    float timeMax1;
-    [SerializeField]
-    float timeMin1;
-    [Header("Dia2")]
-    [SerializeField]
-    int dia2;
-    [SerializeField]
-    float timeMax2;
-    [SerializeField]
-    float timeMin2;
-    [Header("Dia3")]
-    [SerializeField]
-    int dia3;
-    [SerializeField]//cada dia de la semana se tiene que ciolocar asi porque el numero de clientes hay que colocarlo a mano0 desde el motor 
-    float timeMax3; //dia es el numero de clientes que entra timemax y timemin es el intervalo de tiempo que tarda los clientes en entrar despues de que entre otro
-    [SerializeField]
-    float timeMin3;
-    [Header("Dia4")]
-    [SerializeField]
-    int dia4;
-    [SerializeField]
-    float timeMax4;
-    [SerializeField]
-    float timeMin4;
-    [Header("Dia5")]
-    [SerializeField]
-    int dia5;
-    [SerializeField]
-    float timeMax5;
-    [SerializeField]
-    float timeMin5;
-    [Header("Dia6")]
-    [SerializeField]
-    int dia6;
-    [SerializeField]
-    float timeMax6;
-    [SerializeField]
-    float timeMin6;
 
 
     float timeMax;
@@ -84,103 +40,107 @@ public class NPCManager : MonoBehaviour
             {
                 case 1:
                     npcNum = NpcDias[0];
-                    timeMax = timeMax1;
-                    timeMin = timeMin1;
+                    timeMax = TimeMax[0];
+                    timeMin = TimeMin[0];
                     break;
                 case 2:
                     npcNum = NpcDias[1];
-                    timeMax = timeMax2;
-                    timeMin = timeMin2;
+                    timeMax = TimeMax[1];
+                    timeMin = TimeMin[1];
                     break;
                 case 3:
                     npcNum = NpcDias[2];
-                    timeMax = timeMax3;
-                    timeMin = timeMin3;
+                    timeMax = TimeMax[2];
+                    timeMin = TimeMin[2];
                     break;
                 case 4:
                     npcNum = NpcDias[3];
-                    timeMax = timeMax4;
-                    timeMin = timeMin4;
+                    timeMax = TimeMax[3];
+                    timeMin = TimeMin[3];
                     break;
                 case 5:
                     npcNum = NpcDias[4];
-                    timeMax = timeMax5;
-                    timeMin = timeMin5;
+                    timeMax = TimeMax[4];
+                    timeMin = TimeMin[4];
                     break;
                 case 6:
                     npcNum = NpcDias[5];
-                    timeMax = timeMax6;
-                    timeMin = timeMin6;
+                    timeMax = TimeMax[5];
+                    timeMin = TimeMin[5];
                     break;
             }
-        }else if (gameManager.gameData.semana == 1)
+
+        }else 
+        if (gameManager.gameData.semana == 2)
         {
             switch (gameManager.gameData.dia)
             {
                 case 1:
-                    npcNum = dia1;
-                    timeMax = timeMax1;
-                    timeMin = timeMin1;
+                    npcNum = NpcDias[6];
+                    timeMax = TimeMax[6];
+                    timeMin = TimeMin[6];
                     break;
                 case 2:
-                    npcNum = dia2;
-                    timeMax = timeMax2;
-                    timeMin = timeMin2;
+                    npcNum = NpcDias[7];
+                    timeMax = TimeMax[7];
+                    timeMin = TimeMin[7];
                     break;
                 case 3:
-                    npcNum = dia3;
-                    timeMax = timeMax3;
-                    timeMin = timeMin3;
+                    npcNum = NpcDias[8];
+                    timeMax = TimeMax[8];
+                    timeMin = TimeMin[8];
                     break;
                 case 4:
-                    npcNum = dia4;
-                    timeMax = timeMax4;
-                    timeMin = timeMin4;
+                    npcNum = NpcDias[9];
+                    timeMax = TimeMax[9];
+                    timeMin = TimeMin[9];
                     break;
                 case 5:
-                    npcNum = dia5;
-                    timeMax = timeMax5;
-                    timeMin = timeMin5;
+                    npcNum = NpcDias[10];
+                    timeMax = TimeMax[10];
+                    timeMin = TimeMin[10];
                     break;
                 case 6:
-                    npcNum = dia6;
-                    timeMax = timeMax6;
-                    timeMin = timeMin6;
+                    npcNum = NpcDias[11];
+                    timeMax = TimeMax[11];
+                    timeMin = TimeMin[11];
                     break;
             }
-        }else if (gameManager.gameData.semana == 1)
+        }
+        else
+        if (gameManager.gameData.semana == 3)
         {
             switch (gameManager.gameData.dia)
             {
                 case 1:
-                    npcNum = dia1;
-                    timeMax = timeMax1;
-                    timeMin = timeMin1;
+                    npcNum = NpcDias[12];
+                    timeMax = TimeMax[12];
+                    timeMin = TimeMin[12];
                     break;
                 case 2:
-                    npcNum = dia2;
-                    timeMax = timeMax2;
-                    timeMin = timeMin2;
+                    npcNum = NpcDias[13];
+                    timeMax = TimeMax[13];
+                    timeMin = TimeMin[13];
                     break;
                 case 3:
-                    npcNum = dia3;
-                    timeMax = timeMax3;
-                    timeMin = timeMin3;
+                    npcNum = NpcDias[14];
+                    timeMax = TimeMax[14];
+                    timeMin = TimeMin[14];
                     break;
                 case 4:
-                    npcNum = dia4;
-                    timeMax = timeMax4;
-                    timeMin = timeMin4;
+                    npcNum = NpcDias[15];
+                    timeMax = TimeMax[15];
+                    timeMin = TimeMin[15];
                     break;
                 case 5:
-                    npcNum = dia5;
-                    timeMax = timeMax5;
-                    timeMin = timeMin5;
+                    npcNum = NpcDias[16];
+                    timeMax = TimeMax[16];
+                    timeMin = TimeMin[16];
                     break;
                 case 6:
-                    npcNum = dia6;
-                    timeMax = timeMax6;
-                    timeMin = timeMin6;
+                    npcNum = NpcDias[17];
+                    timeMax = TimeMax[17];
+                    timeMin = TimeMin[17];
                     break;
             }
         }
@@ -196,7 +156,7 @@ public class NPCManager : MonoBehaviour
                 tiempo = 0;
                 if (npcgen < npcNum)
                 {
-                    Instantiate(NPC);
+                    Instantiate(NPC[Random.Range(0,3)]);
                     npcgen++;
                     numsalida = Random.Range(timeMin,timeMax +1);
                 }

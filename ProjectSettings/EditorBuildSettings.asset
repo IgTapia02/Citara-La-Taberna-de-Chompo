@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8bb9cd292dd052646b8a98992a56b80e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainRestaurant.unity
     guid: f872ec496ac212243b7f288c26a23e7a
   - enabled: 1
@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Resttaurante_001Final.unity
     guid: 8b6d979732b4145409f5c9433017be48
+  - enabled: 1
+    path: Assets/Scenes/Resttaurante_002Final.unity
+    guid: 07e288b453d254149bc48f75cb8fa527
+  - enabled: 1
+    path: Assets/Scenes/Resttaurante_003Final.unity
+    guid: ff6d59e9259d992458421184cc9eca31
   m_configObjects: {}

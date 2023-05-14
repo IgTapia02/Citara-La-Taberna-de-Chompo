@@ -34,7 +34,7 @@ public class Dias : MonoBehaviour
     void Update()
     {
         
-        switch (game.data.dia)
+        switch (game.gameData.dia)
         {
             case 6:
                 calendario.sprite = dia6;

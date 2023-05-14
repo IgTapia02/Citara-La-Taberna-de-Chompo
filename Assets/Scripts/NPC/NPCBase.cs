@@ -17,12 +17,6 @@ public class NPCBase : MonoBehaviour
     [SerializeField]
     GameObject comida; //objeto generado encima del npc que muestra la comida
 
-    [Header("Sillas")]
-    public GameObject chair1;
-    public GameObject chair2; //sillas de la barra del restaurante
-    public GameObject chair3;
-    public GameObject chair4;
-
     [Header("Tiempos que espera antes de irse")]
     [SerializeField]
     float antesPedir;
@@ -45,11 +39,13 @@ public class NPCBase : MonoBehaviour
     Player player;
     GameManager pagar;
     NPCManager manager;
+    ChairManager chairs;
     GameObject thisColider;
     GameObject thisComida;
     GameObject ownchair;
     void Start()
     {
+        chairs = FindObjectOfType<ChairManager>();
         pagar = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>(); //se inicializan todos los objetos que se van a utilizar
         manager = FindObjectOfType<NPCManager>();
@@ -59,10 +55,6 @@ public class NPCBase : MonoBehaviour
         tiempo = 0f;
         state = 0;
         speed = 3;
-        chair1 = GameObject.Find("Chair (1)");
-        chair2 = GameObject.Find("Chair (2)");
-        chair3 = GameObject.Find("Chair (3)"); // esto de las sillas lo pretendo cambiar a un array para poder añadir mas sillas en otros restaurantes posteriores
-        chair4 = GameObject.Find("Chair (4)");
         target = manager.GetComponent<NPCManager>().target;// target sera el siguiente waypoint al que se movera el npc
         MyAnimation = GetComponent<Animator>();//se inicia el animator
         //las animaciones no estan puestas porque nos dio errores con el movimiento de waypoints
@@ -246,40 +238,131 @@ public class NPCBase : MonoBehaviour
             if(state == 5)
             {
                 MyAnimation.Play("NPC1Iz");
-                target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
+                target = chairs.beforeChairs[0];
                 ownchair.GetComponent<Chair>().fill = false;
             }
             if(state == 0)
             {
                 MyAnimation.Play("NPC1atr");
-                if (chair1.GetComponent<Chair>().fill == false)
+                if (pagar.gameData.bar1 == true)
                 {
-                    chair1.GetComponent<Chair>().fill = true;
-                    target = other.gameObject.GetComponent<ChairManager>().chair1;
-                    ownchair = chair1;
+                    if (chairs.chairs[0].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[0].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[1].transform;
+                        ownchair = chairs.chairs[0];
+                    }
+                    else if (chairs.chairs[1].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[1].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[2].transform;
+                        ownchair = chairs.chairs[1];
+                    }
+                    else if (chairs.chairs[2].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[2].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[3].transform;
+                        ownchair = chairs.chairs[2];
+                    }
+                    else if (chairs.chairs[3].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[3].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[4].transform;
+                        ownchair = chairs.chairs[3];
+                    }
+                    else if (chairs.chairs[4].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[4].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[5].transform;
+                        ownchair = chairs.chairs[4];
+                    }
+                    else
+                    {
+                        state = 5;
+                        target = chairs.beforeChairs[0].transform;
+                    }
                 }
-                else if (chair2.GetComponent<Chair>().fill == false)
+                else if(pagar.gameData.bar2 == true)
                 {
-                    chair2.GetComponent<Chair>().fill = true;
-                    target = other.gameObject.GetComponent<ChairManager>().chair2;
-                    ownchair = chair2;
-                }
-                else if (chair3.GetComponent<Chair>().fill == false)
-                {
-                    chair3.GetComponent<Chair>().fill = true;
-                    target = other.gameObject.GetComponent<ChairManager>().chair3;
-                    ownchair = chair3;
-                }
-                else if (chair4.GetComponent<Chair>().fill == false)
-                {
-                    chair4.GetComponent<Chair>().fill = true;
-                    target = other.gameObject.GetComponent<ChairManager>().chair4;
-                    ownchair = chair4;
+                    if (chairs.chairs[0].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[0].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[1].transform;
+                        ownchair = chairs.chairs[0];
+                    }
+                    else if (chairs.chairs[1].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[1].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[2].transform;
+                        ownchair = chairs.chairs[1];
+                    }
+                    else if (chairs.chairs[2].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[2].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[3].transform;
+                        ownchair = chairs.chairs[2];
+                    }
+                    else if (chairs.chairs[3].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[3].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[4].transform;
+                        ownchair = chairs.chairs[3];
+                    }
+                    else if (chairs.chairs[4].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[4].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[5].transform;
+                        ownchair = chairs.chairs[4];
+                    }
+                    else if (chairs.chairs[5].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[5].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[6].transform;
+                        ownchair = chairs.chairs[5];
+                    }
+                    else if (chairs.chairs[6].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[6].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[7].transform;
+                        ownchair = chairs.chairs[6];
+                    }
+                    else
+                    {
+                        state = 5;
+                        target = chairs.beforeChairs[0].transform;
+                    }
                 }
                 else
                 {
-                    state =  5;
-                    target = other.gameObject.GetComponent<ChairManager>().Exitpoint;
+                    if (chairs.chairs[0].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[0].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[1].transform;
+                        ownchair = chairs.chairs[0];
+                    }
+                    else if (chairs.chairs[1].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[1].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[2].transform;
+                        ownchair = chairs.chairs[1];
+                    }
+                    else if (chairs.chairs[2].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[2].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[3].transform;
+                        ownchair = chairs.chairs[2];
+                    }
+                    else if (chairs.chairs[3].GetComponent<Chair>().fill == false)
+                    {
+                        chairs.chairs[3].GetComponent<Chair>().fill = true;
+                        target = chairs.beforeChairs[4].transform;
+                        ownchair = chairs.chairs[3];
+                    }
+                    else
+                    {
+                        state = 5;
+                        target = chairs.beforeChairs[0].transform;
+                    }
                 }
 
             }

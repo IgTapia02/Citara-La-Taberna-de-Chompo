@@ -10,23 +10,26 @@ public class InfoMidMenu : MonoBehaviour
     [SerializeField]
     TMP_Text sumDinero;
 
+   [SerializeField] GameObject boton1, boton2;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        boton1.SetActive(false);
+        boton2.SetActive(false);
     }
 
     private void Update()
     {
-        //esto solo es con la demo, se activa cuando dia > 6, se quitara cuando continuemos con el juego
-        if(gameManager.findemo==true)
+        sumDinero.text = gameManager.dinMidDia + "$";
+        if(gameManager.gameData.dia == 6)
         {
-            sumDinero.text = "Has terminado la Demo con: " + gameManager.gameData.dineroPJ + "$";
-        }else
-        //se muestra el dinero del jugador
-        {
-            sumDinero.text = gameManager.dinMidDia + "$";
+            if (gameManager.gameData.semana == 1)
+                boton1.SetActive(true);
+
+            if (gameManager.gameData.semana == 2)
+                boton2.SetActive(true);
         }
-        
     }
 
     public IEnumerator Esperar()

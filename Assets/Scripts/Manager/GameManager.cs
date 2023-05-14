@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Precios comida")]
     [SerializeField]// aqui se indican los precios de la comida que se colocan desde motor
-    int zumos,comidas,pagoMes;
+    int zumos,comidas;
 
     public int dineroDia;
     public int dinMidDia;
@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public GameData gameData;
 
     public bool findemo = false;
+
+    public int pagoMes1, pagoMes2, pagoMes3;
 
 
     void Start()
@@ -35,20 +37,13 @@ public class GameManager : MonoBehaviour
         gameData.dineroPJ = 0;
         gameData.dia = 1;
         gameData.semana = 1;
+        gameData.bar1 = false;
+        gameData.bar2 = false;
         SceneManager.LoadScene(primerRestaurante);
     }
     //se termina el dia y se suma uno mas a la variable de dia
     public void CambioDia()
-    {
-        gameData.dia++;
-        if(gameData.dia>6)
-        {
-            //findemo = true;
-            gameData.semana++;
-            gameData.dia = 1;
-            gameData.semana++;
-            gameData.dineroPJ -= pagoMes;
-        }
+    { 
         SceneManager.LoadScene("ResumeMenu");
     }
     //se suma el dinero correspondiente a el dinero total (dineroPJ) y al dinerodia si el pedido es 1 se suma
@@ -75,6 +70,8 @@ public class GameManager : MonoBehaviour
         data.dia = gameData.dia;
         data.semana = gameData.semana;
         data.dineroPJ = gameData.dineroPJ;
+        data.bar1 = gameData.bar1;
+        data.bar2 = gameData.bar2;
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
         bf.Serialize(file, data);
@@ -105,6 +102,7 @@ public class GameManager : MonoBehaviour
 public class GameData
 {
     public int dineroPJ;
-    public int dia, semana = 1;
+    public int dia = 1, semana = 1;
+    public bool bar1 = false, bar2 = false;
 
 }
