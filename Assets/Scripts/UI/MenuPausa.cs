@@ -22,7 +22,7 @@ public class MenuPausa : MonoBehaviour
     {
         manager = FindObjectOfType<GameManager>();
         //si el dia es igual a 1 se activan las imagenes del tutorial
-        if (manager.gameData.dia == 1)
+        if (manager.gameData.dia == 1 && manager.gameData.semana == 1)
         {
             Time.timeScale = 0f;//esto para el juego
             ImageTutorial.SetActive(true);

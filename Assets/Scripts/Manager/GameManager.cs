@@ -97,12 +97,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 }
-//una clase creada para guardar las variables que se quieran serializar para guardar partida
-[System.Serializable]
-public class GameData
-{
-    public int dineroPJ;
-    public int dia = 1, semana = 1;
-    public bool bar1 = false, bar2 = false;
+    //una clase creada para guardar las variables que se quieran serializar para guardar partida
+    [System.Serializable]
+    public class GameData
+    {
+        public int dineroPJ;
+        public int dia = 1, semana = 1;
+        public bool bar1 = false, bar2 = false;
 
-}
+    }

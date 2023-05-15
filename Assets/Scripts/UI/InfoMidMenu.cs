@@ -10,26 +10,14 @@ public class InfoMidMenu : MonoBehaviour
     [SerializeField]
     TMP_Text sumDinero;
 
-   [SerializeField] GameObject boton1, boton2;
-
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        boton1.SetActive(false);
-        boton2.SetActive(false);
     }
 
     private void Update()
     {
         sumDinero.text = gameManager.dinMidDia + "$";
-        if(gameManager.gameData.dia == 6)
-        {
-            if (gameManager.gameData.semana == 1)
-                boton1.SetActive(true);
-
-            if (gameManager.gameData.semana == 2)
-                boton2.SetActive(true);
-        }
     }
 
     public IEnumerator Esperar()

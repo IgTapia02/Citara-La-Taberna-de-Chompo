@@ -31,9 +31,6 @@ public class NPCManager : MonoBehaviour
     {
         npcgen = 0;
         gameManager = FindObjectOfType<GameManager>();
-        //se hace un switch con el dia actual gamedata.dia para decidir cuantos npc saldran ese dia
-        //tengo que cambiar esto de los dias puesto que tengo que añadir las semanas asique lo que hare es cambiarlo todo por un array
-        //de dos variables int fecha[] = new int [semanas][dias] por cada semana hay seis dias, de esta forma seria mucho mas reescalable
         if (gameManager.gameData.semana == 1)
         {
             switch (gameManager.gameData.dia)
