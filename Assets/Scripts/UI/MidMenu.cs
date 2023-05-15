@@ -71,10 +71,10 @@ public class MidMenu : MonoBehaviour
                     cont++;//se suma el dinero dia al dinero general
                     if (gameManager.gameData.dia == 6 || gameManager.gameData.semana>1)
                     {
-                        if (gameManager.gameData.semana == 1 && !gameManager.gameData.bar1)
+                        if (gameManager.gameData.semana >= 1 && !gameManager.gameData.bar1)
                             boton1.SetActive(true);
 
-                        if (gameManager.gameData.semana == 2 && !gameManager.gameData.bar2 && gameManager.gameData.bar1)
+                        if (gameManager.gameData.semana >= 2 && !gameManager.gameData.bar2 && gameManager.gameData.bar1)
                             boton2.SetActive(true);
                     }
                 }
