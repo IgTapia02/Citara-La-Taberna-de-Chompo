@@ -188,6 +188,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
 --- !u!212 &278740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8024,6 +8028,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1577117695}
+    - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
+      propertyPath: NpcDias.Array.size
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 4571084941501079859, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: m_RootOrder
       value: 6

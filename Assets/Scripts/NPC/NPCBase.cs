@@ -26,6 +26,7 @@ public class NPCBase : MonoBehaviour
 
     [SerializeField]
     float comiendo;
+    [SerializeField]
     Animator MyAnimation;
 
     [Header("Pedido que realiza")]
