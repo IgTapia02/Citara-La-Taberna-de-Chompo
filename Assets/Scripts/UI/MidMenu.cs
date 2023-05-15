@@ -43,14 +43,18 @@ public class MidMenu : MonoBehaviour
     {
         if (gameManager.gameData.bar1 && !gameManager.gameData.bar2)
         {
-            gameManager.gameData.bar1 = false;
-            gameManager.gameData.bar2 = true;
-            gameManager.gameData.dineroPJ -= precioBar2;
-            restDinero.text = "-" + precioBar2 + "= " + gameManager.gameData.dineroPJ;
-        }
-        else
-        {
-            restDinero.text = "Not Funds";
+            if (gameManager.gameData.dineroPJ >= precioBar2)
+            {
+                gameManager.gameData.bar1 = false;
+                gameManager.gameData.bar2 = true;
+                gameManager.gameData.dineroPJ -= precioBar2;
+                restDinero.text = "-" + precioBar2 + "= " + gameManager.gameData.dineroPJ;
+            }
+            else
+            {
+                restDinero.text = "Not Funds";
+            }
+
         }
     }
     void Update()

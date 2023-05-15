@@ -15,6 +15,8 @@ public class Cocina2 : MonoBehaviour
 
     [SerializeField]
     GameObject[] cocinas = new GameObject[3]; //aray de objetos que estaran en la cocina. solo caben 3
+
+    [SerializeField] Vector3[] positions = new Vector3[3];
     void Start()
     {
         ncocina = 0;
@@ -79,15 +81,15 @@ public class Cocina2 : MonoBehaviour
                         //despues de cada accion de colocar objetos se recolocan en el mundo los contadores para que siempre esten ordenados
                         if (ncocina == 1)
                         {
-                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
+                            cocinas[0].transform.position = positions[0];
                         }
                         else if (ncocina == 2)
                         {
-                            cocinas[1].transform.position = new Vector3(8.73f, 3.5f, -0.87f);
+                            cocinas[1].transform.position = positions[1];
                         }
                         else if (ncocina == 3)
                         {
-                            cocinas[2].transform.position = new Vector3(8.73f, 3.5f, -2.63f);
+                            cocinas[2].transform.position = positions[2];
                         }
 
 
@@ -118,7 +120,7 @@ public class Cocina2 : MonoBehaviour
                             cocinas[0] = cocinas[1];
                             cocinas[1] = vacio;
 
-                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
+                            cocinas[0].transform.position = positions[0];
 
                         }
                         else if(ncocina == 3)
@@ -127,10 +129,10 @@ public class Cocina2 : MonoBehaviour
                             cocinas[0] = cocinas[1];
                             cocinas[1] = cocinas[2];
                             cocinas[2] = vacio;
-                            
 
-                            cocinas[0].transform.position = new Vector3(8.73f, 3.5f, 1.26f);
-                            cocinas[1].transform.position = new Vector3(8.73f, 3.5f, -0.87f);
+
+                            cocinas[0].transform.position = positions[0];
+                            cocinas[1].transform.position = positions[1];
                         }
                         ncocina--;
                     }

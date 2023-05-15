@@ -7365,6 +7365,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  positions:
+  - {x: 8.75, y: 3.61, z: 1.59}
+  - {x: 8.75, y: 3.61, z: -0.725}
+  - {x: 8.75, y: 3.61, z: -2.759}
 --- !u!65 &7646766180511818773
 BoxCollider:
   m_ObjectHideFlags: 0
