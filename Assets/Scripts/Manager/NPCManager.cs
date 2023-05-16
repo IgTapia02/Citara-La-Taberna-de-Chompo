@@ -153,7 +153,7 @@ public class NPCManager : MonoBehaviour
                 tiempo = 0;
                 if (npcgen < npcNum)
                 {
-                    Instantiate(NPC[Random.Range(0,3)]);
+                    Instantiate(NPC[Random.Range(0,NPC.Length)]);
                     npcgen++;
                     numsalida = Random.Range(timeMin,timeMax +1);
                 }
