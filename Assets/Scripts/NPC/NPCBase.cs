@@ -26,6 +26,7 @@ public class NPCBase : MonoBehaviour
 
     [SerializeField]
     float comiendo;
+    [SerializeField]
     Animator MyAnimation;
 
     [Header("Pedido que realiza")]
@@ -56,7 +57,6 @@ public class NPCBase : MonoBehaviour
         state = 0;
         speed = 3;
         target = manager.GetComponent<NPCManager>().target;// target sera el siguiente waypoint al que se movera el npc
-        MyAnimation = GetComponent<Animator>();//se inicia el animator
         //las animaciones no estan puestas porque nos dio errores con el movimiento de waypoints
         //MyAnimation.Play("NPC1De");
 
