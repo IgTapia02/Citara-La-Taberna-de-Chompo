@@ -84,6 +84,11 @@ MonoBehaviour:
   despuesPedir: 18
   comiendo: 4
   MyAnimation: {fileID: 4117786787972393738}
+  Frente: NPC1Frente
+  Atras: NPC1atr
+  Derecha: NPC1De
+  Izquierda: NPC1Iz
+  Idle: Idlefrente
   pedido: 0
   state: 0
 --- !u!1 &5942462068258282297

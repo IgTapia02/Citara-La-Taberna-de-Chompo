@@ -28,6 +28,8 @@ public class NPCBase : MonoBehaviour
     float comiendo;
     [SerializeField]
     Animator MyAnimation;
+    [SerializeField]
+    string Frente, Atras, Derecha, Izquierda, Idle;
 
     [Header("Pedido que realiza")]
     public int pedido;
@@ -81,6 +83,7 @@ public class NPCBase : MonoBehaviour
             {
                 tiempo = 0;
                 state = 5;
+                MyAnimation.Play(Frente);
                 Destroy(thisComida);
                 Destroy(thisColider);
             }
@@ -130,8 +133,8 @@ public class NPCBase : MonoBehaviour
         //el movimiento se basa en que el npc mira hacia una direccion con su eje z y despues se le aplica una fuerza en este eje que lo mueve hasta colisionar con otro waypoint
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));
         transform.Translate(new Vector3(0, 0, speed * Time.deltaTime));
-        MyAnimation.SetFloat("velx", this.speed);
-        MyAnimation.SetFloat("vely", target.position.y);
+        //MyAnimation.SetFloat("velx", this.speed);
+        //MyAnimation.SetFloat("vely", target.position.y);
         //transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
     }
@@ -237,13 +240,11 @@ public class NPCBase : MonoBehaviour
         {
             if(state == 5)
             {
-                MyAnimation.Play("NPC1Iz");
                 target = chairs.beforeChairs[0];
                 ownchair.GetComponent<Chair>().fill = false;
             }
             if(state == 0)
             {
-                MyAnimation.Play("NPC1atr");
                 if (pagar.gameData.bar1 == true)
                 {
                     if (chairs.chairs[0].GetComponent<Chair>().fill == false)
@@ -370,7 +371,6 @@ public class NPCBase : MonoBehaviour
         //colision con las sillas
         if(other.CompareTag("Chair"))
         {
-            MyAnimation.Play("Idlefrente");
             if (state == 0)
             {
                 target = other.gameObject.GetComponent<Chair>().exitpoint;//se cambia el target a el punto de salida
@@ -388,6 +388,30 @@ public class NPCBase : MonoBehaviour
                 
                 Destroy(this.gameObject);
             }
+        }
+        if(other.CompareTag("Frente"))
+        {
+            MyAnimation.Play(Frente);
+        }
+        if(other.CompareTag("Atras/Derecha"))
+        {
+            if (state == 0)
+                MyAnimation.Play(Izquierda);
+
+            if (state == 5)
+                MyAnimation.Play(Atras);
+        }
+        if (other.CompareTag("Atras/Izquierda"))
+        {
+            if (state == 0)
+                MyAnimation.Play(Atras);
+
+            if (state == 5)
+                MyAnimation.Play(Derecha);
+        }
+        if(other.CompareTag("Idle"))
+        {
+            MyAnimation.Play(Idle);
         }
     }
 }

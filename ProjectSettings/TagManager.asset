@@ -12,6 +12,10 @@ TagManager:
   - Npc
   - Pared
   - Puerta
+  - Atras/Izquierda
+  - Atras/Derecha
+  - Frente
+  - Idle
   layers:
   - Default
   - TransparentFX
