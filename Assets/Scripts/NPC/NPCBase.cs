@@ -28,6 +28,12 @@ public class NPCBase : MonoBehaviour
     float comiendo;
     [SerializeField]
     Animator MyAnimation;
+
+    AudioSource Audio;
+
+    [SerializeField]
+    AudioClip Dor, Pay;
+
     [SerializeField]
     string Frente, Atras, Derecha, Izquierda, Idle;
 
@@ -52,6 +58,7 @@ public class NPCBase : MonoBehaviour
         pagar = FindObjectOfType<GameManager>();
         player = FindObjectOfType<Player>(); //se inicializan todos los objetos que se van a utilizar
         manager = FindObjectOfType<NPCManager>();
+        Audio = this.gameObject.GetComponent<AudioSource>();
         transform.position = manager.transform.position; //se coloca al npc en el punto fuera del restaurante para que entre
         existcolider = false;
         exclamacion = false;
@@ -105,6 +112,7 @@ public class NPCBase : MonoBehaviour
             {
                 tiempo = 0;
                 state = 5;
+                MyAnimation.Play(Frente);
                 Destroy(thisComida);
             }
         }
@@ -115,6 +123,7 @@ public class NPCBase : MonoBehaviour
             
             if (tiempo > comiendo)
             {
+                MyAnimation.Play(Frente);
                 tiempo = 0;
                 state = 5;
                 Destroy(thisComida);
@@ -122,7 +131,6 @@ public class NPCBase : MonoBehaviour
         }
         if (state == 5)
         {
-            //MyAnimation.Play("NPC1Frente");
             Move();
         }
        
