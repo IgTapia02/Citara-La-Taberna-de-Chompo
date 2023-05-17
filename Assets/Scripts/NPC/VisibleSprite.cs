@@ -15,7 +15,7 @@ public class VisibleSprite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(tr.parent.rotation.eulerAngles.y >=  0 && tr.parent.rotation.eulerAngles.y <= 180)
+        if(tr.parent.rotation.eulerAngles.y >=  10 && tr.parent.rotation.eulerAngles.y <= 240)
             tr.rotation = Quaternion.Euler(0, 90, 0);
         else
             tr.rotation = Quaternion.Euler(0, -90, 0);

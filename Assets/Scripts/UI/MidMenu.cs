@@ -31,6 +31,7 @@ public class MidMenu : MonoBehaviour
             {
                 gameManager.gameData.bar1 = true;
                 gameManager.gameData.dineroPJ -= precioBar1;
+                gameManager.dinMidDia = gameManager.gameData.dineroPJ;
                 restDinero.text = "-" + precioBar1 + "= " + gameManager.gameData.dineroPJ;
             }
             else
@@ -48,6 +49,7 @@ public class MidMenu : MonoBehaviour
                 gameManager.gameData.bar1 = false;
                 gameManager.gameData.bar2 = true;
                 gameManager.gameData.dineroPJ -= precioBar2;
+                gameManager.dinMidDia = gameManager.gameData.dineroPJ;
                 restDinero.text = "-" + precioBar2 + "= " + gameManager.gameData.dineroPJ;
             }
             else

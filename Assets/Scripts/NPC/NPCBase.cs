@@ -404,7 +404,7 @@ public class NPCBase : MonoBehaviour
         if(other.CompareTag("Atras/Derecha"))
         {
             if (state == 0)
-                MyAnimation.Play(Izquierda);
+                MyAnimation.Play(Derecha);
 
             if (state == 5)
                 MyAnimation.Play(Atras);

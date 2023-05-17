@@ -23,8 +23,8 @@ public class PedidosAnim : MonoBehaviour
         listo = false;
         time = 0;
 
-        cocina = FindObjectOfType<Cocina2>();
-
+        cocina = GetComponentInParent<Cocina2>();
+        transform.localScale = new Vector3(0.25f, 0.383422226f, 0.516145289f);
         pedido = cocina.pedido;
         //temporizador antiguo
         //spriterender.sprite = temporizador;

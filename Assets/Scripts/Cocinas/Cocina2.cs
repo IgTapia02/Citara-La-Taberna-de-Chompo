@@ -52,7 +52,7 @@ public class Cocina2 : MonoBehaviour
                             player.numcomandas--;
 
                             //se crea un contador que es el objeto que tendra el temporizador y el pedido que se recogera
-                            cocinas[ncocina] = Instantiate(Contador);
+                            cocinas[ncocina] = Instantiate(Contador,transform);
                             ncocina++;
                             //se vuelve a hacer con el comandas 1 y comandas 2 por si el primer objeto es igual a 1
                         }else if (player.Comandas[1] != 1 && player.Comandas[1] != 0)
@@ -64,7 +64,7 @@ public class Cocina2 : MonoBehaviour
                             player.numcomandas--;
 
 
-                            cocinas[ncocina] = Instantiate(Contador);
+                            cocinas[ncocina] = Instantiate(Contador, transform);
                             ncocina++;
 
                         }else if (player.Comandas[2] != 1 && player.Comandas[2] != 0)
@@ -74,7 +74,7 @@ public class Cocina2 : MonoBehaviour
                             player.numcomandas--;
 
 
-                            cocinas[ncocina] = Instantiate(Contador);
+                            cocinas[ncocina] = Instantiate(Contador,transform);
                             ncocina++;
 
                         }

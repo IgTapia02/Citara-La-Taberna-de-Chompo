@@ -300,7 +300,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503614519}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97, y: 13.772, z: 6.58}
+  m_LocalPosition: {x: -5.198, y: 13.772, z: 6.648}
   m_LocalScale: {x: 0.33709, y: 0.33709, z: 0.33709}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,8 +828,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297766762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.324899, y: -13.590919, z: -0.9146123}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.0948997, y: -13.590919, z: -0.59461355}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -837,8 +837,8 @@ Transform:
   - {fileID: 503614520}
   - {fileID: 927015838}
   - {fileID: 481670976}
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 6022144497524114401}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!45 &1391563632
 Skybox:
@@ -5367,6 +5367,7 @@ Transform:
   - {fileID: 6022144498395423276}
   - {fileID: 6022144498116756828}
   - {fileID: 6022144497732533884}
+  - {fileID: 1297766763}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5421,7 +5422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6022144497534453148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.73, y: 0.24, z: 1.568}
+  m_LocalPosition: {x: -1.13, y: 0.24, z: 6.51}
   m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5454,7 +5455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6022144497615576745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.83, y: 0.24, z: 4.1}
+  m_LocalPosition: {x: 0.41, y: 0.24, z: 7.35}
   m_LocalScale: {x: 0.11, y: 0.11, z: 0.11}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5504,7 +5505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b347a1893339d9448b9d6b506fd30b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  point: {fileID: 6022144499504197804}
+  point: {fileID: 6022144497534453139}
   Exitpoint: {fileID: 6022144499474322068}
 --- !u!65 &6022144497732533874
 BoxCollider:
@@ -7461,8 +7462,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7646766180511818760}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 7.2470007, y: 0.30704, z: -0.2349987}
-  m_LocalScale: {x: 3.1660986, y: 1.0551552, z: 1.9778883}
+  m_LocalPosition: {x: 7.35, y: 0.30704, z: -0.34087}
+  m_LocalScale: {x: 4.0700197, y: 3.162026, z: 1.9778883}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4571084941501079857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4571084941501079859}
+  - component: {fileID: 4571084941501079858}
+  m_Layer: 0
+  m_Name: NPCManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4571084941501079859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571084941501079857}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.53, y: 0.86, z: 21.84}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4571084941501079858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4571084941501079857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551e46c07698b054c8a0c8bdbb17a67d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NPC:
+  - {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+  - {fileID: 8725374847877849746, guid: ce8d8ec4e3f5b0449bd2dff5ac20fc7b, type: 3}
+  - {fileID: 9159570840250730532, guid: ad9507b666c724b45bb9cd3f0e4f53d8, type: 3}
+  NpcDias: 030000000400000005000000050000000600000006000000070000000700000008000000080000000a0000000a0000000c0000000c0000000c0000000e0000000e00000010000000
+  TimeMax: 080000000800000007000000070000000700000006000000060000000500000005000000040000000400000004000000030000000300000002000000020000000200000002000000
+  TimeMin: 0c0000000c0000000b0000000a0000000a00000009000000090000000800000008000000070000000700000007000000040000000400000004000000030000000300000003000000
+  npcCreados: 0
+  target: {fileID: 0}
