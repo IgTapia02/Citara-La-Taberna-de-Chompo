@@ -609,6 +609,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 6022144499474322068}
+    - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
+      propertyPath: NPC.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
+      propertyPath: NPC.Array.data[5]
+      value: 
+      objectReference: {fileID: 1259427023073487833, guid: 9331c833f31a21c4c85fb8889d4cc77b, type: 3}
     - target: {fileID: 4571084941501079859, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -719,22 +727,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9109646188622620252, guid: a5bbbd2b7fb3bb945a56f57087d93d48, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -267
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109646188622620252, guid: a5bbbd2b7fb3bb945a56f57087d93d48, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -91.503
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109646188766294833, guid: a5bbbd2b7fb3bb945a56f57087d93d48, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9109646188766294833, guid: a5bbbd2b7fb3bb945a56f57087d93d48, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9109646190069877271, guid: a5bbbd2b7fb3bb945a56f57087d93d48, type: 3}
       propertyPath: m_Name
       value: Canvas
