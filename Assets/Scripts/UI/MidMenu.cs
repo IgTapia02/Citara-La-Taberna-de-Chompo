@@ -108,49 +108,49 @@ public class MidMenu : MonoBehaviour
                 {
                     gameManager.gameData.dia++;
 
-                    if (gameManager.gameData.dia > 6)
-                    {
-                        gameManager.gameData.dia = 1;
-                        if(gameManager.gameData.semana == 1)
+                        if (gameManager.gameData.dia > 6)
                         {
-                            gameManager.gameData.dineroPJ -= gameManager.pagoMes1;
-                        }
+                            gameManager.gameData.dia = 1;
+                            if(gameManager.gameData.semana == 1)
+                            {
+                                gameManager.gameData.dineroPJ -= gameManager.pagoMes1;
+                            }
                             
-                        if (gameManager.gameData.semana == 2)
-                        {
-                            gameManager.gameData.dineroPJ -= gameManager.pagoMes2;
-                        }
+                            if (gameManager.gameData.semana == 2)
+                            {
+                                gameManager.gameData.dineroPJ -= gameManager.pagoMes2;
+                            }
                             
-                        if (gameManager.gameData.semana == 3)
-                        {
-                            gameManager.gameData.dineroPJ -= gameManager.pagoMes3;
-                        }
+                            if (gameManager.gameData.semana == 3)
+                            {
+                                gameManager.gameData.dineroPJ -= gameManager.pagoMes3;
+                            }
                            
-                            gameManager.gameData.semana++;
-                    }
+                                gameManager.gameData.semana++;
+                        }
+                if (gameManager.gameData.dineroPJ < 0 || gameManager.gameData.semana > 3)
+                {
+                    gameManager.ResetGame();
+                }
+                else
+                {
 
-                    if (gameManager.gameData.dineroPJ >= 0 || gameManager.gameData.semana<=3)
+                    if (gameManager.gameData.bar1 == true)
                     {
-                        if (gameManager.gameData.bar1 == true)
-                        {
-                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                            SceneManager.LoadScene("Resttaurante_002Final");//se vuelve al restaurante
-                        }
-                        else if (gameManager.gameData.bar2 == true)
-                        {
-                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                            SceneManager.LoadScene("Resttaurante_003Final");//se vuelve al restaurante
-                        }
-                        else
-                        {
-                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                            SceneManager.LoadScene("Resttaurante_001Final");//se vuelve al restaurante
-                        }
+                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                        SceneManager.LoadScene("Resttaurante_002Final");//se vuelve al restaurante
+                    }
+                    else if (gameManager.gameData.bar2 == true)
+                    {
+                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                        SceneManager.LoadScene("Resttaurante_003Final");//se vuelve al restaurante
                     }
                     else
                     {
-                        gameManager.ResetGame();
+                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                        SceneManager.LoadScene("Resttaurante_001Final");//se vuelve al restaurante
                     }
+                }
                     
 
                 }

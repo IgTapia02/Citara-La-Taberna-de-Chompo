@@ -20619,23 +20619,23 @@ PrefabInstance:
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NPC.Array.data[1]
       value: 
-      objectReference: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+      objectReference: {fileID: 4027876950764489955, guid: ef79eb89f525db74da94268b8224a222, type: 3}
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NPC.Array.data[2]
       value: 
-      objectReference: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+      objectReference: {fileID: 8876604128403882065, guid: 5c565ab1cabfe3f43872e6d7b8ed8b02, type: 3}
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NPC.Array.data[3]
       value: 
-      objectReference: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+      objectReference: {fileID: 1259427023073487833, guid: 9331c833f31a21c4c85fb8889d4cc77b, type: 3}
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NPC.Array.data[4]
       value: 
-      objectReference: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+      objectReference: {fileID: 8725374847877849746, guid: ce8d8ec4e3f5b0449bd2dff5ac20fc7b, type: 3}
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NPC.Array.data[5]
       value: 
-      objectReference: {fileID: 2716351430457958911, guid: 1324e8a3df772e841a6c7a332909e1d1, type: 3}
+      objectReference: {fileID: 9159570840250730532, guid: ad9507b666c724b45bb9cd3f0e4f53d8, type: 3}
     - target: {fileID: 4571084941501079858, guid: e9400b8b4df2f7540baecb6beb368f65, type: 3}
       propertyPath: NpcDias.Array.data[0]
       value: 3
