@@ -73,21 +73,23 @@ public class MidMenu : MonoBehaviour
                     cont++;//se suma el dinero dia al dinero general
                     if (gameManager.gameData.dia == 6 || gameManager.gameData.semana>1)
                     {
-                        if (!gameManager.gameData.bar1)
+                        if (!gameManager.gameData.bar1 && !gameManager.gameData.bar2)
                         {
                             boton1.SetActive(true);
                             restDinero.text = precioBar1 + "$";
                         }
+                        if (!gameManager.gameData.bar2 && gameManager.gameData.bar1)
+                        {
+                            boton2.SetActive(true);
+                            restDinero.text = precioBar2 + "$";
+                        }
+                         
                         if (gameManager.gameData.dia == 6)
                         {
-                            if (!gameManager.gameData.bar2 && gameManager.gameData.bar1)
-                            {
-                                boton2.SetActive(true);
-                                restDinero.text = precioBar2 + "$";
-                            }
+                         
                             if (gameManager.gameData.semana == 1)
                             {
-                                pagoMes.text = "Impuesto semana" + gameManager.gameData.semana + " = " + gameManager.pagoMes1;
+                                pagoMes.text = "Impuesto semana: " + gameManager.gameData.semana + " = " + gameManager.pagoMes1;
                             }
 
                             if (gameManager.gameData.semana == 2)
@@ -127,21 +129,29 @@ public class MidMenu : MonoBehaviour
                             gameManager.gameData.semana++;
                     }
 
-                    if (gameManager.gameData.bar1 == true)
+                    if (gameManager.gameData.dineroPJ >= 0 || gameManager.gameData.semana<=3)
                     {
-                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                        SceneManager.LoadScene("Resttaurante_002Final");//se vuelve al restaurante
-                    }
-                    else if(gameManager.gameData.bar2 == true)
-                    {
-                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                        SceneManager.LoadScene("Resttaurante_003Final");//se vuelve al restaurante
+                        if (gameManager.gameData.bar1 == true)
+                        {
+                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                            SceneManager.LoadScene("Resttaurante_002Final");//se vuelve al restaurante
+                        }
+                        else if (gameManager.gameData.bar2 == true)
+                        {
+                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                            SceneManager.LoadScene("Resttaurante_003Final");//se vuelve al restaurante
+                        }
+                        else
+                        {
+                            gameManager.dineroDia = 0;//se renueva el dinero de ese dia
+                            SceneManager.LoadScene("Resttaurante_001Final");//se vuelve al restaurante
+                        }
                     }
                     else
-                    { 
-                        gameManager.dineroDia = 0;//se renueva el dinero de ese dia
-                        SceneManager.LoadScene("Resttaurante_001Final");//se vuelve al restaurante
+                    {
+                        gameManager.ResetGame();
                     }
+                    
 
                 }
         }

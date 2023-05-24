@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     //se crea un nuevo juego poniendo todas las variables de dinero y dias a sus valores iniciales
     public void NewGame()
     {
-        findemo = false;
         gameData.dineroPJ = 0;
         gameData.dia = 1;
         gameData.semana = 1;
@@ -42,6 +41,17 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(primerRestaurante);
     }
     //se termina el dia y se suma uno mas a la variable de dia
+
+    public void ResetGame ()
+    {
+        gameData.dineroPJ = 0;
+        gameData.dia = 1;
+        gameData.semana = 1;
+        gameData.bar1 = false;
+        gameData.bar2 = false;
+        Save();
+        SceneManager.LoadScene("MainMenu");
+    }
     public void CambioDia()
     { 
         SceneManager.LoadScene("ResumeMenu");
