@@ -12,7 +12,7 @@ public class MidMenu : MonoBehaviour
     int cont;
     [SerializeField] GameObject boton1, boton2;
     [SerializeField] int precioBar1, precioBar2;
-    [SerializeField] TMP_Text restDinero;
+    [SerializeField] TMP_Text restDinero, pagoMes;
     void Start()
     {
         start = false;
@@ -74,10 +74,32 @@ public class MidMenu : MonoBehaviour
                     if (gameManager.gameData.dia == 6 || gameManager.gameData.semana>1)
                     {
                         if (!gameManager.gameData.bar1)
+                        {
                             boton1.SetActive(true);
+                            restDinero.text = precioBar1 + "$";
+                        }
+                        if (gameManager.gameData.dia == 6)
+                        {
+                            if (!gameManager.gameData.bar2 && gameManager.gameData.bar1)
+                            {
+                                boton2.SetActive(true);
+                                restDinero.text = precioBar2 + "$";
+                            }
+                            if (gameManager.gameData.semana == 1)
+                            {
+                                pagoMes.text = "Impuesto semana" + gameManager.gameData.semana + " = " + gameManager.pagoMes1;
+                            }
 
-                        if (!gameManager.gameData.bar2 && gameManager.gameData.bar1)
-                            boton2.SetActive(true);
+                            if (gameManager.gameData.semana == 2)
+                            {
+                                pagoMes.text = "Impuesto semana" + gameManager.gameData.semana + " = " + gameManager.pagoMes2;
+                            }
+
+                            if (gameManager.gameData.semana == 3)
+                            {
+                                pagoMes.text = "Impuesto semana" + gameManager.gameData.semana + " = " + gameManager.pagoMes3;
+                            }
+                        }
                     }
                 }
                 else if (cont == 1)
@@ -87,8 +109,22 @@ public class MidMenu : MonoBehaviour
                     if (gameManager.gameData.dia > 6)
                     {
                         gameManager.gameData.dia = 1;
-                        gameManager.gameData.semana++;
-                        gameManager.gameData.dineroPJ -= gameManager.pagoMes1;
+                        if(gameManager.gameData.semana == 1)
+                        {
+                            gameManager.gameData.dineroPJ -= gameManager.pagoMes1;
+                        }
+                            
+                        if (gameManager.gameData.semana == 2)
+                        {
+                            gameManager.gameData.dineroPJ -= gameManager.pagoMes2;
+                        }
+                            
+                        if (gameManager.gameData.semana == 3)
+                        {
+                            gameManager.gameData.dineroPJ -= gameManager.pagoMes3;
+                        }
+                           
+                            gameManager.gameData.semana++;
                     }
 
                     if (gameManager.gameData.bar1 == true)
