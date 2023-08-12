@@ -159,6 +159,8 @@ public class NPCBase : MonoBehaviour
         if(tiempo >= (antesPedir/2))
         { 
             thisComida.GetComponent<Comidas>().mitadTiempo = true;    //esta es la animacion antes de ser atendido, esta se cambia desde el propio script del objeto y la variable mitadtiempo
+            Audio.PlayOneShot(Pay);
+
         }
         else
         {
@@ -201,6 +203,8 @@ public class NPCBase : MonoBehaviour
             {
                 player.Inventario[0] = 0;
                 pagar.Pagar(pedido);
+                Audio.PlayOneShot(Pay);
+
                 Destroy(thisColider);
                 thisComida.GetComponent<Comidas>().comiendo = true;
                 existcolider = false;
@@ -221,7 +225,8 @@ public class NPCBase : MonoBehaviour
         thisComida.GetComponent<Comidas>().atendido = true;//atendido pasa a ser verdadero para eliminar el npc
         player.Apuntar(pedido);// se guarda el pedido en el array comandas de player
         state = 3;// se cambia de etsado
-        tiempo = 0;//se resetea a 0 el tiempo del contador 
+        tiempo = 0;//se resetea a 0 el tiempo del contador
+        Audio.PlayOneShot(Dor);
 
     }
 
@@ -255,6 +260,7 @@ public class NPCBase : MonoBehaviour
             {
                 if (pagar.gameData.bar1 == true)
                 {
+
                     if (chairs.chairs[0].GetComponent<Chair>().fill == false)
                     {
                         chairs.chairs[0].GetComponent<Chair>().fill = true;
@@ -293,6 +299,7 @@ public class NPCBase : MonoBehaviour
                 }
                 else if(pagar.gameData.bar2 == true)
                 {
+
                     if (chairs.chairs[0].GetComponent<Chair>().fill == false)
                     {
                         chairs.chairs[0].GetComponent<Chair>().fill = true;

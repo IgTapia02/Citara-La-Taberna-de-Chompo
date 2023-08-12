@@ -202,6 +202,8 @@ MonoBehaviour:
   despuesPedir: 18
   comiendo: 4
   MyAnimation: {fileID: 5805302251283495785}
+  Dor: {fileID: 8300000, guid: 7a5413b1d41797847ac7ae38df329c36, type: 3}
+  Pay: {fileID: 8300000, guid: d88c06910c2e8f3458e7e0f0911de572, type: 3}
   Frente: npc3frente
   Atras: npc3atras
   Derecha: npc3dere

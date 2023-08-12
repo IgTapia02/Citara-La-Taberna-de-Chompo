@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed;
 
+    [SerializeField]
+    AudioClip comprep, Pay;
+    AudioSource Audio;
+
     public KeyCode coger;
     public KeyCode dejar;
 
@@ -20,6 +24,7 @@ public class Player : MonoBehaviour
     {
         numcomandas = 0;
         MyAnimation=GetComponent<Animator>();
+        Audio = this.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,6 +47,8 @@ public class Player : MonoBehaviour
     }
     public void Coger(int plato)
     {
-            Inventario[0] = plato;
+        Audio.PlayOneShot(comprep);
+
+        Inventario[0] = plato;
     }
 }
