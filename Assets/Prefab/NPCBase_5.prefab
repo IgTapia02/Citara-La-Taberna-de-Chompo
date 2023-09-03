@@ -212,6 +212,14 @@ MonoBehaviour:
   Idle: Idlefrente
   pedido: 0
   state: 0
+  sonidosComanda:
+  - {fileID: 8300000, guid: 41772185f3028ec46b07c271580bf0fa, type: 3}
+  - {fileID: 8300000, guid: da6b3949b7542e34fb57cadf914302cd, type: 3}
+  - {fileID: 8300000, guid: 86b51f292b01c1c48b277be821e89dec, type: 3}
+  sonidospagar:
+  - {fileID: 8300000, guid: d88c06910c2e8f3458e7e0f0911de572, type: 3}
+  - {fileID: 8300000, guid: 7481ff9ea7eac1940bf88ee3b8a41933, type: 3}
+  - {fileID: 8300000, guid: 38710339e44f5cb40bb7ffe1708fe15e, type: 3}
 --- !u!82 &3116504392231419224
 AudioSource:
   m_ObjectHideFlags: 0

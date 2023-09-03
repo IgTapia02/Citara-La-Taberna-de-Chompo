@@ -52,6 +52,11 @@ public class NPCBase : MonoBehaviour
     GameObject thisColider;
     GameObject thisComida;
     GameObject ownchair;
+
+    public AudioClip[] sonidosComanda;
+    public AudioClip[] sonidospagar;
+    private AudioSource audioSource;
+
     void Start()
     {
         chairs = FindObjectOfType<ChairManager>();
@@ -66,8 +71,9 @@ public class NPCBase : MonoBehaviour
         state = 0;
         speed = 3;
         target = manager.GetComponent<NPCManager>().target;// target sera el siguiente waypoint al que se movera el npc
-        //las animaciones no estan puestas porque nos dio errores con el movimiento de waypoints
-        //MyAnimation.Play("NPC1De");
+                                                           //las animaciones no estan puestas porque nos dio errores con el movimiento de waypoints
+                                                           //MyAnimation.Play("NPC1De");
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -159,7 +165,12 @@ public class NPCBase : MonoBehaviour
         if(tiempo >= (antesPedir/2))
         { 
             thisComida.GetComponent<Comidas>().mitadTiempo = true;    //esta es la animacion antes de ser atendido, esta se cambia desde el propio script del objeto y la variable mitadtiempo
-            Audio.PlayOneShot(Pay);
+            int indiceSonidoAleatorio = Random.Range(0, sonidospagar.Length);
+            AudioClip sonidoAleatorio = sonidospagar[indiceSonidoAleatorio];
+
+            // Reproducir el sonido seleccionado.
+            audioSource.clip = sonidoAleatorio;
+            audioSource.Play();
 
         }
         else
@@ -226,8 +237,13 @@ public class NPCBase : MonoBehaviour
         player.Apuntar(pedido);// se guarda el pedido en el array comandas de player
         state = 3;// se cambia de etsado
         tiempo = 0;//se resetea a 0 el tiempo del contador
-        Audio.PlayOneShot(Dor);
 
+        int indiceSonidoAleatorio = Random.Range(0, sonidosComanda.Length);
+        AudioClip sonidoAleatorio = sonidosComanda[indiceSonidoAleatorio];
+
+        // Reproducir el sonido seleccionado.
+        audioSource.clip = sonidoAleatorio;
+        audioSource.Play();
     }
 
 
