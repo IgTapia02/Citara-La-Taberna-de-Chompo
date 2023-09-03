@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class SonidoPuerta : MonoBehaviour
 {
-    private AudioSource audioSource;
+  
     // Start is called before the first frame update
-    void Start()
+  
+  
+    public AudioClip[] sonidos;  // Lista de sonidos que deseas reproducir.
+
+    private AudioSource audioSource;
+
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-    }
 
-    // Update is called once per frame
-    private void OnTriggerEnter(Collider other)
-    {
-        audioSource.Play();
+        if (sonidos.Length > 0)
+        {
+            // Elegir un sonido al azar de la lista.
+            int indiceSonidoAleatorio = Random.Range(0, sonidos.Length);
+            AudioClip sonidoAleatorio = sonidos[indiceSonidoAleatorio];
+
+            // Reproducir el sonido seleccionado.
+            audioSource.clip = sonidoAleatorio;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No se han asignado sonidos en el Inspector.");
+        }
     }
 }
