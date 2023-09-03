@@ -179,13 +179,17 @@ MonoBehaviour:
   speed: 0
   colider: {fileID: 7111848730095028956, guid: 776d4b9a0f2579444b5a486c1194a4b6, type: 3}
   comida: {fileID: 5526891800164565127, guid: 3dd55466f2420f94ab6f86afba5761e9, type: 3}
-  chair1: {fileID: 0}
-  chair2: {fileID: 0}
-  chair3: {fileID: 0}
-  chair4: {fileID: 0}
   antesPedir: 10
   despuesPedir: 18
   comiendo: 4
+  MyAnimation: {fileID: 0}
+  Dor: {fileID: 8300000, guid: 7a5413b1d41797847ac7ae38df329c36, type: 3}
+  Pay: {fileID: 8300000, guid: d88c06910c2e8f3458e7e0f0911de572, type: 3}
+  Frente: 
+  Atras: 
+  Derecha: 
+  Izquierda: 
+  Idle: 
   pedido: 0
   state: 0
 --- !u!95 &1714325937731249507

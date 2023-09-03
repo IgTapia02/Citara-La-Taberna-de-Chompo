@@ -24,11 +24,13 @@ public class GameManager : MonoBehaviour
 
     public int pagoMes1, pagoMes2, pagoMes3;
 
+    public AudioSource bottonaudio;
 
     void Start()
     {
         //esto es para que en los cambios de escena no se destruya el game object y se mantengan las variables
         DontDestroyOnLoad(this.gameObject);
+        bottonaudio = GetComponent<AudioSource>();
     }
     //se crea un nuevo juego poniendo todas las variables de dinero y dias a sus valores iniciales
     public void NewGame()
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))
         {
+            bottonaudio.Play();
             SceneManager.LoadScene(primerRestaurante);
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);

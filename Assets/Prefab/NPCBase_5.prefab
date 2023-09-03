@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 564123085881077934}
   - component: {fileID: 3116504392231419224}
   m_Layer: 6
-  m_Name: NPCBase 5
+  m_Name: NPCBase_5
   m_TagString: Npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,8 +203,8 @@ MonoBehaviour:
   despuesPedir: 18
   comiendo: 4
   MyAnimation: {fileID: 8493023068829954941}
-  Dor: {fileID: 0}
-  Pay: {fileID: 0}
+  Dor: {fileID: 8300000, guid: 7a5413b1d41797847ac7ae38df329c36, type: 3}
+  Pay: {fileID: 8300000, guid: d88c06910c2e8f3458e7e0f0911de572, type: 3}
   Frente: frente5
   Atras: atras5
   Derecha: derecha5

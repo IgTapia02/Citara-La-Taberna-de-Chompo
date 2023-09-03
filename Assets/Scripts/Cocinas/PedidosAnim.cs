@@ -10,6 +10,7 @@ public class PedidosAnim : MonoBehaviour
     [SerializeField]
     float tiempoPreparar;
 
+    private AudioSource my_AudioSource;
 
     float time;
     public bool listo;
@@ -22,7 +23,7 @@ public class PedidosAnim : MonoBehaviour
         recogido = false;
         listo = false;
         time = 0;
-
+        my_AudioSource = GetComponent<AudioSource>();
         cocina = GetComponentInParent<Cocina2>();
         transform.localScale = new Vector3(0.25f, 0.383422226f, 0.516145289f);
         pedido = cocina.pedido;
@@ -37,6 +38,7 @@ public class PedidosAnim : MonoBehaviour
         if (time >= tiempoPreparar)
         {
             listo = true;
+            my_AudioSource.Play();
         }
         else { time += Time.deltaTime; }
         //se activan las animaciones a medida que el objeto contador este en una fase u otra

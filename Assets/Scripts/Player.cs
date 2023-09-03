@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed;
 
+   
+
     public KeyCode coger;
     public KeyCode dejar;
 
@@ -42,6 +44,7 @@ public class Player : MonoBehaviour
     }
     public void Coger(int plato)
     {
-            Inventario[0] = plato;
+
+        Inventario[0] = plato;
     }
 }
