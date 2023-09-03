@@ -1016,7 +1016,7 @@ MonoBehaviour:
   izqMax: 9.78
   derMax: -6.69
   arribaMax: 4.94
-  abajoMax: -3.39
+  abajoMax: -8.23
   player: {fileID: 206094319}
 --- !u!114 &558623168
 MonoBehaviour:
